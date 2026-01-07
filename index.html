@@ -3,97 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lộ trình Nhà phát triển Front-end 2026</title>
+    <title>DoDat | Web đầu tiên</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; }
-        section { margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
-        h1, h2, h3 { color: #2c3e50; }
-        code { background: #f4f4f4; padding: 2px 5px; border-radius: 3px; }
-        .highlight { color: #e74c3c; font-weight: bold; }
+        /* CSS viết cực ngắn gọn */
+        body {
+            font-family: sans-serif; /* Phông chữ không chân cho dễ đọc */
+            max-width: 600px;        /* Chiều rộng trang vừa phải */
+            margin: 0 auto;          /* Căn giữa trang web */
+            padding: 20px;
+        }
+        img {
+            width: 100%;             /* Ảnh tự co giãn theo màn hình */
+            border-radius: 10px;     /* Bo tròn góc ảnh xíu cho đẹp */
+            margin-top: 10px;
+        }
+        h1 { color: #007bff; }       /* Tiêu đề màu xanh */
+        li { margin-bottom: 5px; }   /* Các dòng danh sách cách nhau ra xíu */
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Lộ trình Trở thành Nhà phát triển Front-end năm 2026</h1>
-        <p>Tóm tắt các kiến thức, kỹ năng và công cụ cần thiết trong kỷ nguyên web hiện đại.</p>
-    </header>
+    <h1>Chào mọi người👋</h1>
+    <p>Đỗ Anh Đạt - 2410277 - THK48SP</p>
 
-    <main>
-        <section id="dinh-nghia">
-            <h2>1. Nhà phát triển Front-end là gì?</h2>
-            <p><strong>Nhà phát triển Front-end</strong> (Front-end Web Developer) là người chịu trách nhiệm thiết kế và triển khai giao diện người dùng (UI). Đây là phần mà người dùng trực tiếp tương tác trên website và ứng dụng.</p>
-            <p>Khác với <em>Web Designer</em> (người tạo ra bản vẽ thiết kế), nhà phát triển Front-end sử dụng các ngôn ngữ mã hóa như <strong>HTML, CSS, và JavaScript</strong> để biến bản thiết kế đó thành hiện thực hoạt động được trên trình duyệt.</p>
-        </section>
+    <img src="banner.png" alt="Ảnh bìa do dat">
 
-        
-
-        <section id="cot-loi">
-            <h2>2. Nền tảng cốt lõi (The Holy Trinity)</h2>
-            <p>Để bắt đầu, chúng ta cần nắm vững nguyên tắc <em>Tách rời các mối quan tâm</em> (Separation of Concerns - SoC): chia nhỏ vấn đề thành Cấu trúc, Giao diện và Hành vi.</p>
-
-            <article>
-                <h3>HTML (HyperText Markup Language)</h3>
-                <p>Đóng vai trò là <strong>bộ khung xương</strong> của trang web. Trình duyệt cần HTML để hiển thị nội dung và cấu trúc dữ liệu.</p>
-                <ul>
-                    <li>Ví dụ: Tiêu đề, văn bản, hình ảnh, liên kết, alt text...</li>
-                </ul>
-            </article>
-
-            <article>
-                <h3>CSS (Cascading Style Sheets)</h3>
-                <p>Đóng vai trò là <strong>làn da, trang phục</strong> của trang web. CSS giúp định dạng vị trí, màu sắc, bố cục và font chữ.</p>
-            </article>
-
-            <article>
-                <h3>JavaScript (JS)</h3>
-                <p>Đóng vai trò là <strong>bộ não</strong> xử lý logic. JS biến các trang web tĩnh thành các ứng dụng động có khả năng tương tác.</p>
-                <ul>
-                    <li>Chức năng: Xác thực dữ liệu, gọi API, xử lý logic nghiệp vụ.</li>
-                    <li>Kết quả: Cho phép livestream, chat, video call ngay trên trình duyệt.</li>
-                </ul>
-            </article>
-            
-            
-        </section>
-
-        <section id="version-control">
-            <h2>3. Hệ thống kiểm soát phiên bản (Version Control)</h2>
-            <p>Trong lập trình, việc quản lý các thay đổi là sống còn. Git là kỹ năng bắt buộc với 96% lập trình viên chuyên nghiệp sử dụng.</p>
-            
-            <dl>
-                <dt><strong>Git</strong></dt>
-                <dd>Hệ thống kiểm soát phiên bản phân tán, mã nguồn mở. Giúp theo dõi lịch sử thay đổi, phối hợp làm việc nhóm và tránh mất mát mã nguồn.</dd>
-
-                <dt><strong>GitHub</strong></dt>
-                <dd>Dịch vụ lưu trữ mã nguồn Git lớn nhất thế giới (được Microsoft mua lại). Là nơi chứa hơn 420 triệu kho lưu trữ (repositories). Đây cũng được xem là "hồ sơ năng lực" (Portfolio) của lập trình viên.</dd>
-
-                <dt><strong>GitLab</strong> (Tùy chọn)</dt>
-                <dd>Nền tảng DevOps trọn gói, một giải pháp thay thế mạnh mẽ cho GitHub với hơn 50 triệu người dùng.</dd>
-            </dl>
-        </section>
-
-        <section id="modern-stack">
-            <h2>4. Công nghệ Front-end Hiện đại</h2>
-            
-            <h3>Quản lý gói (Package Managers)</h3>
-            <p><strong>npm (Node Package Manager)</strong>: Kho lưu trữ khổng lồ các thư viện mã nguồn mở cho JavaScript. Giúp cài đặt và quản lý các thư viện bên ngoài dễ dàng.</p>
-
-            <h3>Framework & Thư viện</h3>
-            <ul>
-                <li><strong>React:</strong> Thư viện JS phổ biến nhất để xây dựng UI dựa trên các <em>Component</em> (thành phần). Cho phép tái sử dụng mã (ví dụ: tạo 1 nút bấm "Like" và dùng ở nhiều nơi).</li>
-                <li><strong>Tailwind CSS:</strong> Framework CSS dạng "tiện ích" (utility-first). Thay vì viết CSS thuần, bạn sử dụng các class có sẵn để dựng giao diện cực nhanh.</li>
-            </ul>
-
-            <h3>Kiểm thử (Testing)</h3>
-            <p><strong>Vitest:</strong> Công cụ kiểm thử hiện đại, chạy nhanh, giúp đảm bảo giao diện và logic hoạt động đúng như mong đợi trước khi đến tay người dùng.</p>
-        </section>
-    </main>
-
-    <footer>
-        <hr>
-        <p><em>Biên soạn cho lớp: Thiết kế Web - Sư phạm Tin học.</em></p>
-    </footer>
+    <hr> <p><em>Cảm ơn thầy và các bạn đã ghé thăm!</em></p>
 
 </body>
 </html>
