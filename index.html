@@ -5,39 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DoDat | Web đầu tiên</title>
     <link rel="icon" href="favicon.png" type="image/x-icon">
-
     
     <style>
-        /* CSS viết cực ngắn gọn */
         body {
-            font-family: sans-serif; /* Phông chữ không chân cho dễ đọc */
-            max-width: 600px;        /* Chiều rộng trang vừa phải */
-            margin: 0 auto;          /* Căn giữa trang web */
+            font-family: 'Segoe UI', sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
             padding: 20px;
+            text-align: center;
         }
-        img {
-            width: 100%;             /* Ảnh tự co giãn theo màn hình */
-            border-radius: 10px;     /* Bo tròn góc ảnh xíu cho đẹp */
-            margin-top: 10px;
+        
+        /* 1. CẤU HÌNH CHUNG CHO CẢ 2 ẢNH (Banner + Tết) */
+        /* Viết gộp thế này cho code gọn, đỡ phải viết lặp lại */
+        .banner-img, .tet-icon {
+            width: 100%;             /* Chiếm hết chiều ngang */
+            height: auto;            /* Tự chỉnh chiều cao theo tỷ lệ */
+            border-radius: 10px;     /* Bo góc cho mềm mại */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Đổ bóng nhẹ */
+            display: block;
+            margin-bottom: 20px;     /* Cách đối tượng bên dưới 20px */
         }
-        h1 { color: #007bff; }       /* Tiêu đề màu xanh */
-        li { margin-bottom: 5px; }   /* Các dòng danh sách cách nhau ra xíu */
 
-        .tet-icon {
-    width: 80px;            /* Kích thước nhỏ vừa phải */
-    display: block;         
-    margin: 0 auto 10px;    /* Căn giữa và cách dòng dưới 10px */
-}
+        h1 { color: #007bff; margin-bottom: 5px; }       
+        p { color: #555; }
     </style>
 </head>
 <body>
 
-    <h1>Chào mọi người👋</h1>
-    <p>Đỗ Anh Đạt - 2410277 - THK48SP</p>
-
-    <img src="banner.png" alt="Ảnh bìa do dat">
     <img src="nammoi.gif" alt="Chúc mừng năm mới" class="tet-icon">
-    <hr> <p><em>Cảm ơn thầy và các bạn đã ghé thăm!</em></p>
+
+    <h1>Chào mọi người 👋</h1>
+    <p><strong>Đỗ Anh Đạt</strong> - 2410277 - THK48SP</p>
+
+    <img src="banner.png" alt="Ảnh bìa do dat" class="banner-img">
+
+    <hr> 
+    <p><em>Cảm ơn thầy và các bạn đã ghé thăm!</em></p>
 
 </body>
 </html>
