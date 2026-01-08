@@ -15,15 +15,14 @@
             text-align: center;
         }
         
-        /* 1. CẤU HÌNH CHUNG CHO CẢ 2 ẢNH (Banner + Tết) */
-        /* Viết gộp thế này cho code gọn, đỡ phải viết lặp lại */
+        /* CẤU HÌNH ẢNH: Phẳng và Vuông vức */
         .banner-img, .tet-icon {
-            width: 100%;             /* Chiếm hết chiều ngang */
-            height: auto;            /* Tự chỉnh chiều cao theo tỷ lệ */
-            border-radius: 10px;     /* Bo góc cho mềm mại */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Đổ bóng nhẹ */
+            width: 100%;             /* Vẫn giữ độ rộng full màn hình */
+            height: auto;            
             display: block;
-            margin-bottom: 20px;     /* Cách đối tượng bên dưới 20px */
+            margin-top: 20px;        /* Cách đối tượng bên trên 20px */
+            
+            /* Đã XÓA dòng border-radius và box-shadow */
         }
 
         h1 { color: #007bff; margin-bottom: 5px; }       
@@ -32,12 +31,12 @@
 </head>
 <body>
 
-    <img src="nammoi.gif" alt="Chúc mừng năm mới" class="tet-icon">
-
     <h1>Chào mọi người 👋</h1>
     <p><strong>Đỗ Anh Đạt</strong> - 2410277 - THK48SP</p>
 
     <img src="banner.png" alt="Ảnh bìa do dat" class="banner-img">
+
+    <img src="nammoi.gif" alt="Chúc mừng năm mới" class="tet-icon">
 
     <hr> 
     <p><em>Cảm ơn thầy và các bạn đã ghé thăm!</em></p>
