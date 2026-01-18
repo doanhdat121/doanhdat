@@ -13,20 +13,43 @@
             margin: 0 auto;
             padding: 20px;
             text-align: center;
+
+            /* --- PHẦN THÊM HÌNH NỀN --- */
+            /* 1. Đường dẫn đến ảnh nền*/
+            background-image: url('anhnen.jpg'); 
+
+            /* 2. Giữ cố định ảnh nền khi cuộn trang*/
+            background-attachment: fixed;
+
+            /* 3. Đảm bảo ảnh luôn phủ kín màn hình bất kể kích thước */
+            background-size: cover;
+
+            /* 4. Căn giữa ảnh nền */
+            background-position: center;
+
+            /* 5. Không lặp lại ảnh nếu ảnh quá nhỏ */
+            background-repeat: no-repeat;
         }
         
         /* CẤU HÌNH ẢNH: Phẳng và Vuông vức */
         .banner-img, .tet-icon {
-            width: 100%;             /* Vẫn giữ độ rộng full màn hình */
+            width: 100%;             
             height: auto;            
             display: block;
-            margin-top: 20px;        /* Cách đối tượng bên trên 20px */
-            
-            /* Đã XÓA dòng border-radius và box-shadow */
+            margin-top: 20px;        
         }
 
-        h1 { color: #007bff; margin-bottom: 5px; }       
-        p { color: #555; }
+        h1 { color: #007bff; margin-bottom: 5px; }        
+        
+        /* MẸO NHỎ: Khi có hình nền, chữ màu xám (#555) có thể khó đọc. 
+           Nếu nền tối, nên đổi color thành #fff (trắng) và thêm text-shadow nhé. */
+        p { 
+            color: #555; 
+            background-color: rgba(255, 255, 255, 0.8); /* Thêm nền trắng mờ cho chữ dễ đọc hơn */
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block; /* Để nền bao quanh chữ vừa vặn */
+        }
     </style>
 </head>
 <body>
