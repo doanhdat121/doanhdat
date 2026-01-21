@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="vi-VN">
+	<head>
+		<title>Thông tin chuyến bay</title>
+		<meta name="author" content="Đỗ Anh Đạt">
+		<meta name="description" content="Thiết kế web">
+		<meta name="keywords" content="20CT2101, Thiết kế web, Khoa công nghệ thông tin, trường Đại học Đà Lạt">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" href="https://lms.dlu.edu.vn/pluginfile.php/1/theme_lambda/favicon/1768770164/Logo_DLU.png">
+		<style>
+			body {
+				margin: 0;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			table,
+			th,
+			td {
+				border: 1px solid black;
+				text-align: center;
+				vertical-align: middle;
+			}
+
+			table {
+				width: 100%;
+				border-collapse: collapse;
+			}
+
+			tr:nth-child(even) {
+				background-color: LightSteelBlue;
+			}
+
+			.topnav {
+				overflow: hidden;
+				background-color: #333;
+			}
+
+			.topnav a {
+				float: left;
+				color: #f2f2f2;
+				text-align: center;
+				padding: 14px 16px;
+				text-decoration: none;
+				font-size: 17px;
+			}
+
+			.topnav a:hover {
+				background-color: #ddd;
+				color: black;
+			}
+
+			.topnav a.active {
+				background-color: #04AA6D;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="topnav">
+			<a href="index.html">Trang chủ</a>
+			<a href="timetable.html">Thời khóa biểu</a>
+			<a href="flights.html" class="active">Thông tin chuyến bay</a>
+			<a href="recipes.html">Công thức nấu ăn ngon</a>
+		</div>
+		<div style="padding:16px;">
+			<h1>Thông tin chuyến bay</h1>
+		</div>
+		<table>
+			<tr>
+				<th>Kế hoạch <br>(Scheduled) </th>
+				<th>Dự kiến <br>(Estimated) </th>
+				<th>Nơi đến <br>(Destination) </th>
+				<th>Hãng <br>(Airlines) </th>
+				<th>Chuyến bay <br>(Flight) </th>
+				<th>Cửa <br>(Gate) </th>
+				<th>Ghi chú <br>(Remarks) </th>
+			</tr>
+			<tr>
+				<td>05:50</td>
+				<td></td>
+				<td>Tuy Hòa</td>
+				<td>
+					<a href="https://www.vietjetair.com/vi" target="_blank">
+						<img src="vietjet.png" alt="vietjet" width="100">
+					</a>
+				</td>
+				<td>VJ 206</td>
+				<td>12</td>
+				<td>Cancalled</td>
+			</tr>
+			<tr>
+				<td>05:55</td>
+				<td>14:15</td>
+				<td>Phú Quốc</td>
+				<td>
+					<a href="https://www.bambooairways.com/vn/vi/home" target="_blank">
+						<img src="bamboo.png" alt="bamboo" width="100">
+					</a>
+				</td>
+				<td>QH 1525</td>
+				<td>10</td>
+				<td>Delayed</td>
+			</tr>
+			<tr>
+				<td>06:05</td>
+				<td>11:20</td>
+				<td>Phú Quốc</td>
+				<td>
+					<a href="https://www.pacificairlines.com/" target="_blank">
+						<img src="pacific.png" alt="pacific" width="100">
+					</a>
+				</td>
+				<td>VN 6511</td>
+				<td>2</td>
+				<td>Delayed</td>
+			</tr>
+			<tr>
+				<td>06:50</td>
+				<td></td>
+				<td>Phú Quốc</td>
+				<td>
+					<a href="https://www.vietnamairlines.com/vn/vi/" _blank">
+						<img src="vietnam.png" alt="vietnam airlines" width="100">
+					</a>
+				</td>
+				<td>VN 1823</td>
+				<td>10</td>
+				<td>Delayed</td>
+			</tr>
+			<tr>
+				<td>07:00</td>
+				<td></td>
+				<td>Côn Đảo</td>
+				<td>
+					<a href="https://www.vasco.com.vn/vi/">
+						<img src="vasco.png" alt="vasco" width="100">
+				</td>
+				<td>0V 8059</td>
+				<td>3</td>
+				<td>Delayed</td>
+			</tr>
+			<tr>
+				<td>07:25</td>
+				<td>10:30</td>
+				<td>Phú Quốc</td>
+				<td>
+					<a href="https://www.pacificairlines.com/" target="_blank">
+						<img src="pacific.png" alt="pacific" width="100">
+				</td>
+				<td>VN 6513</td>
+				<td>2</td>
+				<td>Boarding</td>
+			</tr>
+			<tr>
+				<td>07:30</td>
+				<td>13:25</td>
+				<td>Côn Đảo</td>
+				<td>
+					<a href="https://www.vietnamairlines.com/vn/vi/" _blank">
+						<img src="vietnam.png" alt="vietnam airlines" width="100">
+					</a>
+				</td>
+				<td>VN 1865</td>
+				<td>9</td>
+				<td>Delayed</td>
+			</tr>
+			<tr>
+				<td>08:55</td>
+				<td>13:35</td>
+				<td>Côn Đảo</td>
+				<td>
+					<a href="https://www.vietnamairlines.com/vn/vi/" _blank">
+						<img src="vietnam.png" alt="vietnam airlines" width="100">
+					</a>
+				</td>
+				<td>VN 1875</td>
+				<td>9</td>
+				<td>Delayed</td>
+			</tr>
+			<tr>
+				<td>10:10</td>
+				<td>13:50</td>
+				<td>Phú Quốc</td>
+				<td>
+					<a href="https://www.pacificairlines.com/" target="_blank">
+						<img src="pacific.png" alt="pacific" width="100">
+					</a>
+				</td>
+				<td>BL 6527</td>
+				<td>3</td>
+				<td>Delayed</td>
+			</tr>
+			<tr>
+				<td>10:10</td>
+				<td>14:10</td>
+				<td>Phú Quốc</td>
+				<td>
+					<a href="https://www.vietnamairlines.com/vn/vi/" _blank">
+						<img src="vietnam.png" alt="vietnam airlines" width="100">
+					</a>
+				</td>
+				<td>VN 1827</td>
+				<td>15</td>
+				<td>Delayed</td>
+			</tr>
+		</table>
+	</body>
+</html>
