@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Đăng ký học phần</title>
+		<meta name="author" content="Đỗ Anh Đạt">
+		<meta name="description" content="Thiết kế web">
+		<meta name="keywords" content="20CT2101, Thiết kế web, Khoa công nghệ thông tin, trường Đại học Đà Lạt">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" href="https://lms.dlu.edu.vn/pluginfile.php/1/theme_lambda/favicon/1768770164/Logo_DLU.png">
+<link rel="stylesheet" href="style.css">
+	</head>
+<body>
+<form method="post" action="registration.php">
+	<table border="2" cellspacing="5px">
+<!-- 1 -->
+		<tr>
+			<td colspan="2">Phiếu đăng ký học phần</td>
+		</tr>
+<!-- 2 -->
+		<tr>
+			<td class="td150 required">Nhập họ và tên</td>
+			<td><input type="text" name="fullname" required></td>
+		</tr>
+<!-- 3 -->
+		<tr>
+			<td class="required">Nhập mã số sinh viên</td>
+			<td><input type="text" name="id" required></td>
+		</tr>
+<!-- 4 -->
+		<tr>
+			<td class="required">Chọn lớp</td>
+			<td>
+				<select name="class" required>
+					<option value="CTK46A">CTK46A</option>
+					<option value="CTK46B">CTK46B</option>
+					<option value="CTK47A">CTK47A</option>
+					<option value="CTK47B">CTK47B</option>
+					<option value="CTK47C">CTK47C</option>
+					<option value="CTK48A">CTK48A</option>
+					<option value="CTK48B">CTK48B</option>
+					<option value="THK46SP">THK46SP</option>
+					<option value="THK47SP">THK47SP</option>
+					<option value="THK48SP">THK48SP</option>
+				</select>
+			</td>
+		</tr>
+<!-- 5 -->
+		<tr>
+			<td class="required">Chọn học phần</td>
+			<td>
+				<table class="sub-table clearfix">
+					<tr>
+						<td><input type="checkbox" name="LC1102D">Kinh tế Chính trị Mác - Lênin (LC1102D)</td>
+						<td><input type="checkbox" name="20TN1202">Toán rời rạc (20TN1202)</td>
+					</tr>
+
+					<tr>
+						<td><input type="checkbox" name="20TN1201">Toán cao cấp B1 (20TN1201)</td>
+						<td><input type="checkbox" name="20CT1202">Nguyên lý lập trình hướng đối tượng (20CT1202)</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="TC1004D">Giáo dục thể chất 2 - Bóng đá (TC1004D)</td>
+						<td><input type="checkbox" name="TC1002D">Giáo dục thể chất 2 - Cầu lông (TC1002D)</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+<!-- 6 -->
+		<tr>
+    <td class="required">Xác nhận</td>
+    <td>
+        <label>
+            <input type="radio" name="confirm" required>
+            Tôi chịu trách nhiệm về kết quả đăng ký các học phần này
+        </label>
+    </td>
+</tr>
+<!-- 7 -->
+<tr>
+    <td colspan="2" class="center">
+        <input type="reset" class="btn-reset" value="Nhập lại">
+        <input type="submit" class="btn-submit" value="Đăng ký">
+    </td>
+</tr>
+</table>
+</form>
+</body>
+</html>
