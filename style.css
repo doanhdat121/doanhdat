@@ -23,14 +23,23 @@ body {
 .yt-navbar {
     position: fixed;
     top: 0; left: 0; right: 0;
-    height: 56px;
-    background-color: rgba(255, 255, 255, 0.98); /* Màu trắng hơi trong suốt */
+    
+    height: 56px; /* <-- Đây là chiều cao chuẩn, nếu để auto nó sẽ bị to */
+    
+    background-color: rgba(255, 255, 255, 0.98);
     display: flex;
-    align-items: center;
+    align-items: center; /* Căn giữa nội dung theo chiều dọc */
     justify-content: space-between;
     padding: 0 16px;
-    z-index: 1000; /* Luôn nổi trên cùng */
-    box-shadow: 0 1px 5px rgba(0,0,0,0.05); /* Bóng đổ nhẹ chân thực */
+    z-index: 1000;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+}
+
+/* Đảm bảo ảnh không bao giờ vượt quá chiều cao thanh Nav */
+.logo-icon { 
+    max-height: 40px; 
+    width: auto; 
+    object-fit: contain;
 }
 
 /* --- Góc Trái: Menu & Logo --- */
