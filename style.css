@@ -85,15 +85,31 @@ body {
 }
 
 /* Avatar tròn ở giữa */
-.banner-img {
-    width: 60px; height: 60px; /* Nhỏ lại còn 60px */
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 5px;
-    border: 2px solid #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+/* --- SỬA LẠI PHẦN NÀY TRONG STYLE.CSS --- */
+
+/* 1. Ảnh Logo trên Navbar (Chỉnh lại chút cho ảnh có chữ hiển thị đẹp) */
+.logo-icon { 
+    max-height: 50px; /* Cho phép cao hơn để rõ chữ */
+    width: auto; 
+    object-fit: contain;
 }
 
+/* 2. Ảnh Banner Profile (Biến từ Avatar tròn thành Ảnh bìa to) */
+.banner-img {
+    width: 100%;        /* Bung rộng ra hết cỡ khung chứa */
+    max-width: 600px;   /* Giới hạn độ rộng tối đa (không quá to) */
+    height: auto;       /* Tự chỉnh chiều cao theo tỉ lệ ảnh */
+    
+    border-radius: 8px; /* Bo góc nhẹ hình chữ nhật (không tròn vo nữa) */
+    
+    object-fit: contain; /* Hiển thị trọn vẹn nội dung ảnh */
+    margin-bottom: 15px;
+    box-shadow: none;   /* Bỏ bóng đổ cũ cho sạch */
+    border: none;       /* Bỏ viền trắng cũ */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 h1 { margin: 2px 0; font-size: 18px; color: #0f0f0f; }
 .student-info { margin: 2px 0; font-size: 13px; color: #555; }
 .sub-info { font-size: 12px; color: #888; margin-bottom: 5px; }
