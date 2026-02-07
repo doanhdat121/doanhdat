@@ -7,24 +7,22 @@ body {
     padding: 0;
     background-color: #f9f9f9;
     color: #0f0f0f;
-    /* Giảm khoảng chừa cho Navbar xuống 50px */
-    padding-top: 50px; 
+    padding-top: 50px; /* Chừa chỗ cho menu trên cùng */
 }
 
 .main-content, .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 15px;
 }
 
 /* =========================================
-   2. NAVBAR (ĐÃ THU GỌN)
+   2. NAVBAR (THANH MENU TRÊN CÙNG)
    ========================================= */
 .yt-navbar {
     position: fixed;
     top: 0; left: 0; right: 0;
-    /* Giảm chiều cao xuống 50px cho gọn */
-    height: 50px; 
+    height: 50px; /* Chiều cao gọn gàng 50px */
     background-color: rgba(255, 255, 255, 0.98);
     display: flex;
     align-items: center;
@@ -34,63 +32,61 @@ body {
     box-shadow: 0 1px 5px rgba(0,0,0,0.05);
 }
 
+/* Phần Logo & Menu góc trái */
 .start-section { display: flex; align-items: center; gap: 15px; }
 .menu-icon { padding: 5px; cursor: pointer; }
 .logo-container { display: flex; align-items: center; text-decoration: none; color: black; gap: 5px; }
-.logo-icon { width: 30px; height: auto; object-fit: contain; } /* Logo nhỏ gọn */
+.logo-icon { width: 30px; height: auto; object-fit: contain; } /* Logo nhỏ 30px */
+.logo-text { font-family: 'Oswald', sans-serif; font-size: 18px; font-weight: bold; color: #212121; }
 
-.logo-text {
-    font-family: 'Oswald', sans-serif;
-    font-size: 18px; /* Giảm cỡ chữ logo chút */
-    font-weight: bold;
-    color: #212121;
-}
-
-.center-section { flex: 0 1 500px; display: flex; margin: 0 15px; }
+/* Phần Tìm kiếm ở giữa */
+.center-section { flex: 0 1 500px; display: flex; margin: 0 10px; }
 .search-box { display: flex; width: 100%; }
 .search-box input {
-    flex: 1; padding: 5px 15px; /* Input mỏng hơn */
-    font-size: 14px;
+    flex: 1; padding: 6px 15px; font-size: 14px;
     border: 1px solid #ccc; border-right: none;
     border-top-left-radius: 20px; border-bottom-left-radius: 20px;
     outline: none; background-color: #fff;
 }
 .search-btn {
     padding: 0 15px; background-color: #f8f8f8;
-    border: 1px solid #ccc;
-    border-top-right-radius: 20px; border-bottom-right-radius: 20px;
+    border: 1px solid #ccc; border-top-right-radius: 20px; border-bottom-right-radius: 20px;
     cursor: pointer;
 }
+
+/* Avatar góc phải */
 .end-section .user-avatar { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; }
 
 /* =========================================
-   3. PROFILE HEADER (THU GỌN NHIỀU NHẤT)
+   3. PHẦN THÔNG TIN & ẢNH TẾT (ĐÃ THU NHỎ)
    ========================================= */
 .profile-header {
     text-align: center;
-    margin-bottom: 20px; /* Giảm khoảng cách dưới */
-    padding-top: 15px;   /* Giảm khoảng cách trên */
+    margin-bottom: 15px;
+    padding-top: 10px;
 }
 
-/* Ảnh Tết nhỏ lại */
+/* Ảnh Chúc Mừng Năm Mới nhỏ lại */
 .tet-banner {
     display: block;
-    max-width: 150px; /* Giảm từ 250px xuống 150px */
+    max-width: 150px; /* Chỉ rộng 150px thôi cho đỡ chiếm chỗ */
     width: 100%;
     margin: 0 auto 5px auto;
 }
 
+/* Khung thông tin cá nhân */
 .header-content {
     background: white;
     border-radius: 12px;
-    padding: 15px; /* Giảm padding trong khung */
+    padding: 15px;
     display: inline-block;
     min-width: 280px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
+/* Avatar tròn ở giữa */
 .banner-img {
-    width: 60px; height: 60px; /* Giảm size avatar từ 80px -> 60px */
+    width: 60px; height: 60px; /* Nhỏ lại còn 60px */
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 5px;
@@ -98,37 +94,30 @@ body {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-h1 { margin: 2px 0; font-size: 18px; color: #0f0f0f; } /* Tên nhỏ lại xíu */
+h1 { margin: 2px 0; font-size: 18px; color: #0f0f0f; }
 .student-info { margin: 2px 0; font-size: 13px; color: #555; }
-.sub-info { display: none; } /* Ẩn dòng phụ không cần thiết cho gọn */
+.sub-info { font-size: 12px; color: #888; margin-bottom: 5px; }
 
 .subscribe-btn {
     background-color: #0f0f0f; color: white; border: none;
-    padding: 6px 16px; /* Nút nhỏ lại */
-    border-radius: 18px; font-weight: bold; font-size: 12px;
-    cursor: pointer; margin-top: 8px;
+    padding: 6px 16px; border-radius: 18px; 
+    font-weight: bold; font-size: 12px; cursor: pointer;
 }
 .subscribe-btn:hover { background-color: #272727; }
 
 /* =========================================
-   4. GRID LAYOUT & MÀU PASTEL (GIỮ NGUYÊN)
+   4. DANH SÁCH BÀI LAB (GIỮ NGUYÊN MÀU & HIỆU ỨNG)
    ========================================= */
-.section-title { 
-    margin: 20px 0 15px; 
-    font-size: 18px; 
-    font-weight: 700;
-    display: flex; align-items: center; gap: 8px;
-}
+.section-title { margin: 20px 0 15px; font-size: 18px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
 
 .video-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Card nhỏ hơn xíu */
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 15px;
     margin-bottom: 30px;
 }
 
-/* ... (Giữ nguyên phần Logic đổi màu Pastel bên dưới của bạn) ... */
-/* LOGIC ĐỔI MÀU TỰ ĐỘNG */
+/* --- MÀU PASTEL TỰ ĐỘNG --- */
 .video-grid > a:nth-child(3n+1) { background-color: #ffeef5; border: 1px solid #ffdceb; }
 .video-grid > a:nth-child(3n+1) .card-title { color: #b71c1c; }
 
@@ -138,7 +127,6 @@ h1 { margin: 2px 0; font-size: 18px; color: #0f0f0f; } /* Tên nhỏ lại xíu 
 .video-grid > a:nth-child(3n+3) { background-color: #e3f2fd; border: 1px solid #bbdefb; }
 .video-grid > a:nth-child(3n+3) .card-title { color: #0d47a1; }
 
-/* THIẾT KẾ CARD */
 .video-card {
     text-decoration: none; color: #0f0f0f;
     display: flex; flex-direction: column;
