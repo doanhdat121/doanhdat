@@ -1,0 +1,125 @@
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+	font-family: Arial, sans-serif;
+	background-color: #f0f0f0;
+}
+
+.clock {
+	position: relative;
+	width: 300px;
+	height: 300px;
+	border: 5px solid #333;
+	border-radius: 50%;
+	background: #fff;
+}
+
+.hour-hand,
+.minute-hand,
+.second-hand {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform-origin: 0% 50%;
+	transition: transform 0.05s ease-in-out;
+}
+
+.hour-hand {
+	width: 30%;
+	height: 6px;
+	background: #333;
+	transform: rotate(90deg);
+}
+
+.minute-hand {
+	width: 40%;
+	height: 4px;
+	background: #666;
+	transform: rotate(90deg);
+}
+
+.second-hand {
+	width: 45%;
+	height: 2px;
+	background: red;
+	transform: rotate(90deg);
+}
+
+.center-dot {
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	background: #333;
+	border-radius: 50%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 10;
+}
+
+.time {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #333;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 50%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.time-1 {
+	transform: translate(-50%, -50%) rotate(30deg) translateY(-130px) rotate(-30deg);
+}
+
+.time-2 {
+	transform: translate(-50%, -50%) rotate(60deg) translateY(-130px) rotate(-60deg);
+}
+
+.time-3 {
+	transform: translate(-50%, -50%) rotate(90deg) translateY(-130px) rotate(-90deg);
+}
+
+.time-4 {
+	transform: translate(-50%, -50%) rotate(120deg) translateY(-130px) rotate(-120deg);
+}
+
+.time-5 {
+	transform: translate(-50%, -50%) rotate(150deg) translateY(-130px) rotate(-150deg);
+}
+
+.time-6 {
+	transform: translate(-50%, -50%) rotate(180deg) translateY(-130px) rotate(-180deg);
+}
+
+.time-7 {
+	transform: translate(-50%, -50%) rotate(210deg) translateY(-130px) rotate(-210deg);
+}
+
+.time-8 {
+	transform: translate(-50%, -50%) rotate(240deg) translateY(-130px) rotate(-240deg);
+}
+
+.time-9 {
+	transform: translate(-50%, -50%) rotate(270deg) translateY(-130px) rotate(-270deg);
+}
+
+.time-10 {
+	transform: translate(-50%, -50%) rotate(300deg) translateY(-130px) rotate(-300deg);
+}
+
+.time-11 {
+	transform: translate(-50%, -50%) rotate(330deg) translateY(-130px) rotate(-330deg);
+}
+
+.time-12 {
+	transform: translate(-50%, -50%) rotate(360deg) translateY(-130px) rotate(-360deg);
+}
+
