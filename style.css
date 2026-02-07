@@ -89,7 +89,7 @@ body {
 
 /* 1. Ảnh Logo trên Navbar (Chỉnh lại chút cho ảnh có chữ hiển thị đẹp) */
 .logo-icon { 
-    max-height: 50px; /* Cho phép cao hơn để rõ chữ */
+    max-height: 150px; /* Cho phép cao hơn để rõ chữ */
     width: auto; 
     object-fit: contain;
 }
