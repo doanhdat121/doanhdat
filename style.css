@@ -70,7 +70,7 @@ body {
 /* Ảnh Chúc Mừng Năm Mới nhỏ lại */
 .tet-banner {
     display: block;
-    max-width: 150px; /* Chỉ rộng 150px thôi cho đỡ chiếm chỗ */
+    max-width: 50%; 
     width: 100%;
     margin: 0 auto 5px auto;
 }
