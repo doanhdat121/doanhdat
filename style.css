@@ -36,7 +36,7 @@ body {
 .start-section { display: flex; align-items: center; gap: 15px; }
 .menu-icon { padding: 5px; cursor: pointer; }
 .logo-container { display: flex; align-items: center; text-decoration: none; color: black; gap: 5px; }
-.logo-icon { width: 30px; height: auto; object-fit: contain; } /* Logo nhỏ 30px */
+.logo-icon { width: 60px; height: auto; object-fit: contain; } 
 .logo-text { font-family: 'Oswald', sans-serif; font-size: 18px; font-weight: bold; color: #212121; }
 
 /* Phần Tìm kiếm ở giữa */
