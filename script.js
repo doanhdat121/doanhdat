@@ -109,7 +109,7 @@ function toggleChillMusic(element) {
         // --- TRƯỜNG HỢP ĐANG HÁT -> TẮT NHẠC ---
         
         // Xóa iframe đi là tắt nhạc
-        playerContainer.innerHTML = "";
+        playerContainer.innerHTML = "TUYYwb8b0zs";
         
         // Trả lại giao diện cũ
         icon.innerHTML = "▶";
