@@ -206,5 +206,60 @@ h1 { margin: 2px 0; font-size: 18px; color: #0f0f0f; }
 .shorts-card { background-color: white; border: 1px solid #e5e5e5; }
 .portrait-thumb { aspect-ratio: 9/16; }
 
+/* =========================================
+   5. HIỆU ỨNG MỚI (ANIMATIONS & EFFECTS)
+   ========================================= */
+
+/* A. Hiệu ứng các thẻ bài tập bay lên lần lượt */
+.video-card {
+    opacity: 0; /* Ẩn đi ban đầu */
+    animation: cardEntrance 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Tạo độ trễ (delay) để chúng hiện ra từng cái một */
+.video-card:nth-child(1) { animation-delay: 0.1s; }
+.video-card:nth-child(2) { animation-delay: 0.2s; }
+.video-card:nth-child(3) { animation-delay: 0.3s; }
+.video-card:nth-child(4) { animation-delay: 0.4s; }
+.video-card:nth-child(5) { animation-delay: 0.5s; }
+/* ... Nếu có nhiều bài hơn thì cứ copy tiếp ... */
+
+/* B. Hiệu ứng sóng nước khi Click chuột (Ripple Effect) */
+.click-ripple {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.2); /* Màu của sóng */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Không chặn click vào link */
+    animation: rippleAnim 0.6s linear forwards;
+    z-index: 9999;
+}
+
+@keyframes rippleAnim {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0.5;
+    }
+    100% {
+        width: 300px; /* Độ rộng lan tỏa */
+        height: 300px;
+        opacity: 0;
+    }
+}
+
 .divider { border: 0; height: 1px; background: #e5e5e5; margin: 30px 0; }
 .footer { text-align: center; color: #606060; font-size: 12px; padding-bottom: 20px; }
