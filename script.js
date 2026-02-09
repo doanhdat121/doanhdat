@@ -74,3 +74,48 @@ document.addEventListener('DOMContentLoaded', function() {
             ripple.remove();
         }, 600);
     });
+// ... Code cũ ...
+
+// 5. HÀM BẬT/TẮT NHẠC NỀN (GIỮ NGUYÊN ẢNH)
+let isPlaying = false; // Biến kiểm tra xem nhạc có đang hát không
+
+function toggleChillMusic(element) {
+    const playerContainer = document.getElementById('hidden-player');
+    const icon = document.getElementById('music-icon');
+    const text = document.getElementById('music-text');
+    const videoId = "jfKfPfyJRdk"; // ID bài nhạc Lofi
+
+    if (isPlaying == false) {
+        // --- TRƯỜNG HỢP CHƯA HÁT -> BẬT NHẠC ---
+        
+        // Chèn video YouTube vào (nhưng nó bị CSS ẩn đi nên chỉ nghe tiếng)
+        playerContainer.innerHTML = `
+            <iframe width="100" height="100" 
+                src="https://www.youtube.com/embed/${videoId}?autoplay=1&loop=1&playlist=${videoId}" 
+                title="Music Player" 
+                frameborder="0" 
+                allow="autoplay">
+            </iframe>
+        `;
+        
+        // Đổi giao diện sang trạng thái "Đang phát"
+        icon.innerHTML = "⏸"; // Đổi icon Play thành Pause
+        text.innerHTML = "Đang Chill... (Bấm để tắt)";
+        icon.style.color = "#00ff00"; // Đổi màu xanh cho đẹp
+        
+        isPlaying = true; // Đánh dấu là đang hát
+        
+    } else {
+        // --- TRƯỜNG HỢP ĐANG HÁT -> TẮT NHẠC ---
+        
+        // Xóa iframe đi là tắt nhạc
+        playerContainer.innerHTML = "";
+        
+        // Trả lại giao diện cũ
+        icon.innerHTML = "▶";
+        text.innerHTML = "Bấm để Chill Nhạc Lofi";
+        icon.style.color = "white";
+        
+        isPlaying = false; // Đánh dấu là đã tắt
+    }
+}
