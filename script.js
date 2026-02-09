@@ -91,7 +91,7 @@ function toggleChillMusic(element) {
         // Chèn video YouTube vào (nhưng nó bị CSS ẩn đi nên chỉ nghe tiếng)
         playerContainer.innerHTML = `
             <iframe width="100" height="100" 
-                src="https://www.youtube.com/embed/${videoId}?autoplay=1&loop=1&playlist=${videoId}" 
+                src="https:https://www.youtube.com/watch?v=TUYYwb8b0zs" 
                 title="Music Player" 
                 frameborder="0" 
                 allow="autoplay">
@@ -109,7 +109,7 @@ function toggleChillMusic(element) {
         // --- TRƯỜNG HỢP ĐANG HÁT -> TẮT NHẠC ---
         
         // Xóa iframe đi là tắt nhạc
-        playerContainer.innerHTML = "TUYYwb8b0zs";
+        playerContainer.innerHTML = "";
         
         // Trả lại giao diện cũ
         icon.innerHTML = "▶";
