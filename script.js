@@ -77,45 +77,65 @@ document.addEventListener('DOMContentLoaded', function() {
 // ... Code cũ ...
 
 // 5. HÀM BẬT/TẮT NHẠC NỀN (GIỮ NGUYÊN ẢNH)
-let isPlaying = false; // Biến kiểm tra xem nhạc có đang hát không
+// Biến kiểm tra trạng thái nhạc (Đặt ở ngoài hàm)
+let isPlaying = false; 
 
 function toggleChillMusic(element) {
     const playerContainer = document.getElementById('hidden-player');
+    const videoId = "TUYYwb8b0zs"; // Bài hát: Tháng Năm - Soobin
+    
+    // Thử tìm icon và text (Nếu bạn đã xóa bên HTML thì nó sẽ là null)
     const icon = document.getElementById('music-icon');
     const text = document.getElementById('music-text');
-    const videoId = "jfKfPfyJRdk"; // ID bài nhạc Lofi
 
     if (isPlaying == false) {
-        // --- TRƯỜNG HỢP CHƯA HÁT -> BẬT NHẠC ---
+        // --- TRƯỜNG HỢP 1: BẬT NHẠC ---
         
-        // Chèn video YouTube vào (nhưng nó bị CSS ẩn đi nên chỉ nghe tiếng)
+        // Chèn Video vào
         playerContainer.innerHTML = `
-            <iframe width="100" height="100" 
-                src="https:https://www.youtube.com/watch?v=TUYYwb8b0zs" 
+            <iframe width="100%" height="100%" 
+                src="https://www.youtube.com/embed/${videoId}?autoplay=1&loop=1&playlist=${videoId}" 
                 title="Music Player" 
                 frameborder="0" 
-                allow="autoplay">
+                allow="autoplay"
+                style="border-radius: 12px;">
             </iframe>
         `;
         
-        // Đổi giao diện sang trạng thái "Đang phát"
-        icon.innerHTML = "⏸"; // Đổi icon Play thành Pause
-        text.innerHTML = "Đang Chill... (Bấm để tắt)";
-        icon.style.color = "#00ff00"; // Đổi màu xanh cho đẹp
+        // Hiện khung video lên
+        playerContainer.style.opacity = "1";
+        playerContainer.style.pointerEvents = "auto";
+
+        // KIỂM TRA: Nếu còn nút icon thì mới đổi màu (tránh bị lỗi)
+        if (icon) {
+            icon.innerHTML = "⏸"; 
+            icon.style.color = "#00ff00";
+        }
+        if (text) {
+            text.innerHTML = "Đang Chill... (Bấm để tắt)";
+        }
         
-        isPlaying = true; // Đánh dấu là đang hát
+        isPlaying = true;
         
     } else {
-        // --- TRƯỜNG HỢP ĐANG HÁT -> TẮT NHẠC ---
+        // --- TRƯỜNG HỢP 2: TẮT NHẠC ---
         
-        // Xóa iframe đi là tắt nhạc
+        // Xóa sạch video
         playerContainer.innerHTML = "";
         
-        // Trả lại giao diện cũ
-        icon.innerHTML = "▶";
-        text.innerHTML = "Bấm để Chill Nhạc Lofi";
-        icon.style.color = "white";
+        // Ẩn khung video đi
+        playerContainer.style.opacity = "0";
+        playerContainer.style.pointerEvents = "none";
         
-        isPlaying = false; // Đánh dấu là đã tắt
+        // Trả lại icon cũ (nếu còn)
+        if (icon) {
+            icon.innerHTML = "▶";
+            icon.style.color = "white";
+        }
+        if (text) {
+            text.innerHTML = "Bấm để Chill Nhạc Lofi";
+        }
+        
+        isPlaying = false; 
     }
 }
