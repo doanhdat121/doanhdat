@@ -46,7 +46,7 @@ body {
     flex: 1; padding: 6px 15px; font-size: 14px;
     border: 1px solid #ccc; border-right: none;
     border-top-left-radius: 20px; border-bottom-left-radius: 20px;
-    background: linear-gradient(to right, #FF0DAB, #4E8CFA);
+    background: linear-gradient(to right, #F8CCFF, #A8A2F5);
     color: white;
 }
 .search-btn {
