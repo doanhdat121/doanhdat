@@ -332,101 +332,85 @@ h1 { margin: 2px 0; font-size: 18px; color: #0f0f0f; }
     color: white;
 }
 /* =========================================
-   7. BỐ CỤC KHU VỰC BTVN & NHẠC (BỔ SUNG)
+   7. BỐ CỤC KHU VỰC BTVN & NHẠC (SỬA LẠI: KHÔNG KHUNG)
    ========================================= */
 
-/* Container bao quanh để chia cột */
+/* Container bao quanh (Giữ nguyên) */
 .homework-layout {
     display: flex;
-    gap: 25px; /* Khoảng cách giữa BTVN và Banner nhạc */
-    align-items: stretch; /* Kéo dãn 2 bên cho bằng chiều cao nhau */
+    gap: 25px; 
+    align-items: stretch; /* Quan trọng: Kéo dãn chiều cao 2 bên bằng nhau */
 }
 
-/* Cột trái (chứa lưới BTVN) */
-.homework-left {
-    flex: 0 0 auto; /* Không co giãn, giữ kích thước chuẩn của grid */
-}
-
-/* Cột phải (chứa banner nhạc ngang) */
+/* Cột phải (Banner Nhạc) - SỬA LẠI */
 .music-banner-right {
-    flex: 1; /* Chiếm hết không gian còn lại bên phải */
+    flex: 1; 
     position: relative;
-    border-radius: 16px; /* Bo góc tròn */
-    overflow: hidden;
-    text-decoration: none;
+    cursor: pointer;
     
-    /* HIỆU ỨNG KÍNH TRONG SUỐT (GLASSMORPHISM) */
-    background: rgba(255, 255, 255, 0.1); /* Nền trắng mờ nhẹ */
-    backdrop-filter: blur(10px); /* Làm mờ hậu cảnh phía sau */
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Viền kính mỏng */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    cursor: pointer; /* Hiện hình bàn tay khi di chuột */
-    transition: all 0.3s ease;
-    display: flex; /* Để canh giữa ảnh bên trong */
+    /* --- BỎ KHUNG KÍNH MỜ --- */
+    background: transparent; 
+    border: none; 
+    box-shadow: none; 
+    backdrop-filter: none;
+    
+    /* --- CANH GIỮA NGANG --- */
+    display: flex;
+    justify-content: center; /* Ảnh nằm giữa khoảng trống */
+    align-items: center;
 }
 
-/* Ảnh banner bên trong */
+/* Ảnh banner bên trong - SỬA LẠI */
 .music-banner-right img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Phủ kín khung ngang */
-    opacity: 0.85; /* Hơi trong suốt để lộ hiệu ứng kính */
-    transition: opacity 0.3s, transform 0.5s;
+    height: 100%;  /* Cao bằng thẻ BTVN bên cạnh */
+    width: auto;   /* Tự động chỉnh chiều rộng theo tỉ lệ ảnh gốc */
+    object-fit: contain; /* Đảm bảo ảnh không bị méo */
+    
+    border-radius: 12px; /* Bo góc ảnh cho đẹp */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Đổ bóng nhẹ cho ảnh nổi lên */
+    transition: transform 0.3s ease;
 }
 
-/* Lớp phủ chữ và nút play */
+/* Hiệu ứng khi di chuột vào ảnh */
+.music-banner-right:hover img {
+    transform: scale(1.02); /* Phóng to nhẹ ảnh */
+}
+
+/* Lớp phủ chữ và nút play (Giữ nguyên) */
 .banner-overlay {
     position: absolute;
     top: 50%; left: 50%;
-    transform: translate(-50%, -50%); /* Căn giữa tuyệt đối */
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     align-items: center;
     color: white;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.6); /* Đổ bóng chữ cho dễ đọc */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8); /* Tăng bóng chữ cho rõ hơn */
     z-index: 2;
+    pointer-events: none; /* Để click xuyên qua vào div cha */
 }
 
-.play-icon {
-    font-size: 40px;
-    margin-bottom: 10px;
-    opacity: 0.8;
-    transition: all 0.3s;
+/* Container chứa Video ẩn (SỬA LẠI ĐỂ VIDEO CŨNG CANH GIỮA) */
+#hidden-player {
+    position: absolute;
+    top: 0; 
+    bottom: 0;
+    /* Canh giữa video giống ảnh */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    height: 100%; /* Cao bằng container */
+    aspect-ratio: 16/9; /* Giữ tỉ lệ chuẩn Youtube */
+    
+    z-index: 1; /* Nằm đè lên ảnh khi hiện */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-.play-text {
-    font-size: 18px;
-    font-weight: 500;
-    font-family: 'Oswald', sans-serif;
-    letter-spacing: 1px;
-}
-
-/* --- HIỆU ỨNG HOVER (DI CHUỘT VÀO) --- */
-.music-banner-right:hover {
-    transform: translateY(-5px); /* Bay lên nhẹ */
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-    border-color: rgba(255, 255, 255, 0.4);
-}
-
-.music-banner-right:hover img {
-    opacity: 1; /* Ảnh rõ nét hơn */
-    transform: scale(1.03); /* Phóng to ảnh nhẹ bên trong */
-}
-
-.music-banner-right:hover .play-icon {
-    opacity: 1;
-    transform: scale(1.2); /* Nút play phóng to */
-    color: #ff0000; /* Đổi màu đỏ YouTube */
-}
-
-/* --- RESPONSIVE TRÊN ĐIỆN THOẠI --- */
+/* Responsive (Giữ nguyên) */
 @media (max-width: 768px) {
-    .homework-layout {
-        flex-direction: column; /* Xếp chồng lên nhau trên mobile */
-    }
-    .music-banner-right {
-        height: 180px; /* Chiều cao cố định trên mobile */
-        width: 100%;
-    }
+    .homework-layout { flex-direction: column; }
+    .music-banner-right { height: auto; min-height: 200px; }
+    .music-banner-right img { width: 100%; height: auto; }
 }
