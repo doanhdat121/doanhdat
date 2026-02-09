@@ -1,53 +1,76 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Danh sách dự án</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f0f0f0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    .container {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      margin: 10px 0;
-    }
-    a {
-      text-decoration: none;
-      color: #007bff;
-      font-weight: bold;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách dự án Lab 8 | DoDat</title>
+    <link rel="icon" href="../favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Danh sách dự án</h1>
-    <ul>
-      <li><a href="clock/index.html" target="_blank">Clock Project</a></li>
-      <li><a href="invitation/index.html" target="_blank">Invitation Project</a></li>
-      <!-- Thêm các link khác tại đây -->
-    </ul>
-  </div>
+
+    <nav class="yt-navbar">
+        <div class="start-section">
+            <div class="menu-icon">
+                 <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" style="pointer-events: none; display: block; width: 24px; height: 24px;"><g><path d="M21,6H3V5h18V6z M21,11H3v1h18V11z M21,17H3v1h18V17z"></path></g></svg>
+            </div>
+            
+            <a href="../index.html" class="logo-container">
+                <img src="../logominiden.webp" alt="Logo" class="logo-icon" style="height: 35px; width: auto;"> 
+            </a>
+        </div>
+
+        <div class="center-section">
+            <div class="search-box">
+                <input type="text" placeholder="Tìm dự án trong Lab 8...">
+                <button class="search-btn">🔍</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        
+        <div class="container" style="margin-top: 20px;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+                <a href="../index.html" style="text-decoration: none; font-size: 20px;">⬅️</a>
+                <h1 style="font-size: 24px; margin: 0;">Danh sách dự án Lab 8</h1>
+            </div>
+            
+            <p class="sub-info" style="margin-bottom: 30px;">Tổng hợp các bài tập nhỏ trong bài thực hành số 8</p>
+
+            <div class="video-grid">
+                
+                <a href="clock/index.html" target="_blank" class="video-card">
+                    <div class="thumbnail-container">
+                        <div class="thumb-placeholder thumb-clock"><span>⏰</span></div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Dự án 1: ĐỒNG HỒ CANVAS</h3>
+                        <div class="card-meta">Ứng dụng xem giờ thời gian thực</div>
+                    </div>
+                </a>
+
+                <a href="invitation/index.html" target="_blank" class="video-card">
+                    <div class="thumbnail-container">
+                        <div class="thumb-placeholder thumb-canvas"><span>📨</span></div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Dự án 2: THIẾT KẾ THIỆP MỜI</h3>
+                        <div class="card-meta">Hiệu ứng và âm nhạc</div>
+                    </div>
+                </a>
+
+                </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="footer">
+            <p>&copy; 2026 DoAnhDat Inc. | <a href="../index.html" style="text-decoration: none; color: #606060;">Về trang chủ</a></p>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
 </body>
 </html>
