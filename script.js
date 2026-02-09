@@ -51,3 +51,26 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
 });
+
+
+
+// ... (Code cũ của bạn ở trên) ...
+
+    // 4. HIỆU ỨNG SÓNG NƯỚC KHI CLICK CHUỘT (RIPPLE EFFECT)
+    document.addEventListener('click', function(e) {
+        // Tạo thẻ div làm sóng
+        const ripple = document.createElement('div');
+        ripple.classList.add('click-ripple');
+
+        // Đặt vị trí sóng ngay tại chỗ chuột click
+        ripple.style.left = e.pageX + 'px';
+        ripple.style.top = e.pageY + 'px';
+
+        // Thêm vào trang
+        document.body.appendChild(ripple);
+
+        // Xóa thẻ div sau khi chạy xong hiệu ứng (0.6s) để nhẹ web
+        setTimeout(() => {
+            ripple.remove();
+        }, 600);
+    });
