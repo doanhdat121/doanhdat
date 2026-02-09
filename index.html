@@ -148,18 +148,34 @@
 
         <div class="container">
             <h2 class="section-title">🏠 Bài tập về nhà</h2>
-            <div class="video-grid shorts-grid">
-                
-                <a href="btvn7/index.html" target="_blank" class="video-card shorts-card">
-                    <div class="thumbnail-container portrait-thumb">
-                        <img src="thum/thumbt7.jpg" alt="BTVN 7">
-                    </div>
-                    <div class="card-info">
-                        <h3 class="card-title">BTVN 7: Thiết kế thiệp mời</h3>
-                        <div class="card-meta">1 triệu lượt xem</div>
-                    </div>
-                </a>
+           <div class="homework-layout">
+    
+    <div class="homework-left">
+        <div class="video-grid shorts-grid">
+            <a href="btvn7/index.html" target="_blank" class="video-card shorts-card">
+                <div class="thumbnail-container portrait-thumb">
+                    <img src="thum/thumbt7.jpg" alt="BTVN 7">
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">BTVN 7: Thiết kế thiệp mời</h3>
+                    <div class="card-meta">1 triệu lượt xem</div>
+                </div>
+            </a>
             </div>
+    </div>
+    
+   <div class="music-banner-right" onclick="toggleChillMusic(this)">
+        
+        <img src="sotaythoitiet.webp" alt="Music Chill Banner">
+        
+        <div class="banner-overlay">
+            <span class="play-icon" id="music-icon">▶</span>
+            <span class="play-text" id="music-text">Bấm để nghe nhạc</span>
+        </div>
+
+        <div id="hidden-player" style="position: absolute; opacity: 0; pointer-events: none;"></div>
+    </div>
+</div>
         </div>
 
         <div class="footer">
