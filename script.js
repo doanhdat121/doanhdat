@@ -78,64 +78,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // 5. HÀM BẬT/TẮT NHẠC NỀN (GIỮ NGUYÊN ẢNH)
 // Biến kiểm tra trạng thái nhạc (Đặt ở ngoài hàm)
+// Biến toàn cục để nhớ trạng thái
 let isPlaying = false; 
 
 function toggleChillMusic(element) {
     const playerContainer = document.getElementById('hidden-player');
-    const videoId = "TUYYwb8b0zs"; // Bài hát: Tháng Năm - Soobin
+    const videoId = "TUYYwb8b0zs";
     
-    // Thử tìm icon và text (Nếu bạn đã xóa bên HTML thì nó sẽ là null)
-    const icon = document.getElementById('music-icon');
-    const text = document.getElementById('music-text');
-
     if (isPlaying == false) {
-        // --- TRƯỜNG HỢP 1: BẬT NHẠC ---
-        
-        // Chèn Video vào
+        // --- BẬT NHẠC ---
+        // Chèn video vào div ẩn -> Nhạc tự phát lên
         playerContainer.innerHTML = `
-            <iframe width="100%" height="100%" 
+            <iframe width="100" height="100" 
                 src="https://www.youtube.com/embed/${videoId}?autoplay=1&loop=1&playlist=${videoId}" 
                 title="Music Player" 
                 frameborder="0" 
-                allow="autoplay"
-                style="border-radius: 12px;">
+                allow="autoplay">
             </iframe>
         `;
         
-        // Hiện khung video lên
-        playerContainer.style.opacity = "1";
-        playerContainer.style.pointerEvents = "auto";
-
-        // KIỂM TRA: Nếu còn nút icon thì mới đổi màu (tránh bị lỗi)
-        if (icon) {
-            icon.innerHTML = "⏸"; 
-            icon.style.color = "#00ff00";
-        }
-        if (text) {
-            text.innerHTML = "Đang Chill... (Bấm để tắt)";
-        }
-        
         isPlaying = true;
         
-    } else {
-        // --- TRƯỜNG HỢP 2: TẮT NHẠC ---
+        // (Tùy chọn) Có thể console.log để bạn biết là code đã chạy
+        console.log("Đang phát nhạc ngầm...");
         
-        // Xóa sạch video
+    } else {
+        // --- TẮT NHẠC ---
+        // Xóa sạch iframe -> Nhạc tắt
         playerContainer.innerHTML = "";
         
-        // Ẩn khung video đi
-        playerContainer.style.opacity = "0";
-        playerContainer.style.pointerEvents = "none";
-        
-        // Trả lại icon cũ (nếu còn)
-        if (icon) {
-            icon.innerHTML = "▶";
-            icon.style.color = "white";
-        }
-        if (text) {
-            text.innerHTML = "Bấm để Chill Nhạc Lofi";
-        }
-        
-        isPlaying = false; 
+        isPlaying = false;
+        console.log("Đã tắt nhạc.");
     }
 }
