@@ -112,34 +112,48 @@ function toggleChillMusic(element) {
     }
 }
 // ... (Code cũ của bạn ở trên) ...
+// ... (Code cũ ở trên giữ nguyên) ...
 
-/* 6. TÍNH NĂNG DARK MODE / LIGHT MODE
-*/
+/* =========================================
+   6. TÍNH NĂNG DARK MODE & ĐỔI LOGO
+   ========================================= */
 const themeBtn = document.getElementById('theme-toggle');
 const body = document.body;
+const logoImg = document.querySelector('.logo-icon'); // Lấy thẻ ảnh logo
 
-// Kiểm tra xem người dùng đã từng chọn Dark Mode chưa (lưu trong máy)
+// CẤU HÌNH TÊN FILE LOGO Ở ĐÂY
+const lightLogo = 'logominiden.webp';  // Logo giao diện sáng
+const darkLogo = 'logominitrang.png'; // THAY TÊN FILE LOGO DARK MODE CỦA BẠN VÀO ĐÂY
+
+// Hàm đổi logo dựa trên trạng thái
+function updateLogo(isDark) {
+    if (isDark) {
+        logoImg.src = darkLogo;
+    } else {
+        logoImg.src = lightLogo;
+    }
+}
+
+// 1. Kiểm tra trạng thái đã lưu khi mới vào web
 const currentTheme = localStorage.getItem('theme');
 if (currentTheme === 'dark') {
     body.classList.add('dark-mode');
-    themeBtn.textContent = '☀️'; // Đổi icon thành mặt trời
+    themeBtn.textContent = '☀️';
+    updateLogo(true); // Đổi sang logo tối ngay lập tức
 }
 
+// 2. Xử lý sự kiện click nút
 themeBtn.addEventListener('click', function() {
-    // Thêm hoặc xóa class dark-mode ở body
     body.classList.toggle('dark-mode');
     
-    // Kiểm tra xem đang là chế độ nào để đổi icon và lưu lại
+    // Kiểm tra class để biết đang ở chế độ nào
     if (body.classList.contains('dark-mode')) {
-        themeBtn.textContent = '☀️'; // Chuyển thành icon Sáng
-        localStorage.setItem('theme', 'dark'); // Lưu lại "đây là dark"
-        
-        // Hiệu ứng chuyển đổi logo (nếu logo là ảnh đen)
-        // document.querySelector('.logo-icon').style.filter = "invert(1)"; 
+        themeBtn.textContent = '☀️';
+        localStorage.setItem('theme', 'dark');
+        updateLogo(true); // Chuyển sang logo Dark Mode
     } else {
-        themeBtn.textContent = '🌙'; // Chuyển thành icon Tối
-        localStorage.setItem('theme', 'light'); // Lưu lại "đây là light"
-        
-        // document.querySelector('.logo-icon').style.filter = "invert(0)";
+        themeBtn.textContent = '🌙';
+        localStorage.setItem('theme', 'light');
+        updateLogo(false); // Quay về logo gốc
     }
 });
