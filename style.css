@@ -423,3 +423,120 @@ h1 { margin: 2px 0; font-size: 18px; color: #0f0f0f; }
     .music-banner-right { height: auto; min-height: 200px; }
     .music-banner-right img { width: 100%; height: auto; }
 }
+/* =========================================
+   8. DARK MODE & SUPER GLASS EFFECT
+   ========================================= */
+
+/* --- A. NÂNG CẤP HIỆU ỨNG KÍNH MỜ (SUPER GLASS) --- */
+/* Ghi đè lại class .yt-navbar cũ để mờ đẹp hơn */
+.yt-navbar {
+    /* Giảm độ đục của nền trắng xuống để thấy nội dung bên dưới mờ ảo */
+    background-color: rgba(255, 255, 255, 0.6) !important; 
+    
+    /* Tăng độ mờ (Blur) lên cao */
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    
+    /* Thêm viền trắng mờ để tạo cảm giác tấm kính dày */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4) !important;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07) !important;
+}
+
+/* Nút chuyển đổi giao diện */
+.end-section {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.theme-btn {
+    background: rgba(0, 0, 0, 0.05);
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 8px 12px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+.theme-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+    transform: rotate(15deg) scale(1.1);
+}
+
+/* --- B. GIAO DIỆN DARK MODE (CHẾ ĐỘ TỐI) --- */
+
+/* Khi body có class 'dark-mode' thì áp dụng các màu sau */
+body.dark-mode {
+    background-color: #121212; /* Nền đen dịu */
+    color: #e0e0e0; /* Chữ trắng xám */
+}
+
+/* 1. Xử lý Navbar trong Darkmode */
+body.dark-mode .yt-navbar {
+    /* Màu kính đen mờ */
+    background-color: rgba(18, 18, 18, 0.7) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+body.dark-mode .logo-icon {
+    filter: invert(1); /* Đảo ngược màu logo đen sang trắng */
+}
+
+body.dark-mode .menu-icon svg {
+    fill: white; /* Icon menu thành màu trắng */
+}
+
+body.dark-mode .theme-btn {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* 2. Xử lý ô tìm kiếm */
+body.dark-mode .search-box input {
+    background: #2a2a2a;
+    color: white;
+    border-color: #444;
+}
+body.dark-mode .search-btn {
+    background-color: #333;
+    border-color: #444;
+    color: white;
+}
+
+/* 3. Xử lý phần thông tin cá nhân */
+body.dark-mode h1, 
+body.dark-mode .section-title {
+    color: #ffffff;
+}
+body.dark-mode .header-content {
+    background: #1e1e1e; /* Hộp thông tin tối màu */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+body.dark-mode .student-info,
+body.dark-mode .sub-info {
+    color: #bbb;
+}
+body.dark-mode .subscribe-btn {
+    background-color: #ffffff;
+    color: black; /* Nút đăng ký đảo màu cho nổi */
+}
+
+/* 4. Xử lý Thẻ bài tập (Quan trọng: Ghi đè màu Pastel cũ) */
+body.dark-mode .video-grid > a {
+    background-color: #1e1e1e !important; /* Nền thẻ tối */
+    border: 1px solid #333 !important;
+}
+
+body.dark-mode .card-title {
+    color: #fff !important; /* Tiêu đề bài tập màu trắng */
+}
+
+body.dark-mode .shorts-card {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+
+/* Hiệu ứng hover trong darkmode */
+body.dark-mode .video-card:hover {
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
+    border-color: #555 !important;
+}
