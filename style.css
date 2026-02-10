@@ -479,7 +479,7 @@ body.dark-mode .yt-navbar {
 }
 
 body.dark-mode .logo-icon {
-    filter: invert(1); /* Đảo ngược màu logo đen sang trắng */
+    transition: opacity 0.3s ease;
 }
 
 body.dark-mode .menu-icon svg {
