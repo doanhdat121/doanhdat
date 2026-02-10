@@ -157,3 +157,141 @@ themeBtn.addEventListener('click', function() {
         updateLogo(false); // Quay về logo gốc
     }
 });
+/* =========================================
+   7. TÍCH HỢP ĐỒNG HỒ TỪ LAB 9
+   ========================================= */
+
+// Hàm khởi chạy (Bọc lại để đảm bảo web tải xong mới chạy)
+function initLab9Clock() {
+    const canvas = document.getElementById("canvas");
+    if(!canvas) return; // Nếu không tìm thấy canvas thì dừng
+
+    const ctx = canvas.getContext("2d");
+    let radius = canvas.height / 2;
+    
+    // Dời tâm về giữa
+    ctx.translate(radius, radius);
+    radius = radius * 0.90;
+
+    // Chạy đồng hồ mỗi giây
+    setInterval(() => {
+        drawClock(ctx, radius);
+        updateGreeting(); // Hàm này thêm mới để đổi lời chào
+    }, 1000);
+}
+
+// --- LOGIC VẼ CỦA BẠN (GIỮ NGUYÊN TỪ LAB 9) ---
+function drawClock(ctx, radius) {
+    drawFace(ctx, radius);
+    drawNumbers(ctx, radius);
+    drawTime(ctx, radius);
+}
+
+function drawFace(ctx, radius) {
+    // Sửa nhẹ chỗ màu sắc để tương thích Dark Mode
+    const isDark = document.body.classList.contains('dark-mode');
+    
+    // Nếu Darkmode thì dùng màu tối, không thì dùng màu trắng như cũ
+    const bgColor = isDark ? '#333' : 'white'; 
+    const rimColor = isDark ? '#555' : '#333';
+
+    const grad = ctx.createRadialGradient(0, 0, radius * 0.95, 0, 0, radius * 1.05);
+    grad.addColorStop(0, rimColor);
+    grad.addColorStop(0.5, bgColor);
+    grad.addColorStop(1, rimColor);
+    
+    ctx.beginPath();
+    ctx.arc(0, 0, radius, 0, 2 * Math.PI);
+    ctx.fillStyle = bgColor; // Đã sửa để ăn theo darkmode
+    ctx.fill();
+    
+    ctx.strokeStyle = grad;
+    ctx.lineWidth = radius * 0.1;
+    ctx.stroke();
+    
+    ctx.beginPath();
+    ctx.arc(0, 0, radius * 0.1, 0, 2 * Math.PI);
+    ctx.fillStyle = rimColor;
+    ctx.fill();
+}
+
+function drawNumbers(ctx, radius) {
+    const isDark = document.body.classList.contains('dark-mode');
+    ctx.font = radius * 0.15 + "px arial";
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "center";
+    ctx.fillStyle = isDark ? '#fff' : '#000'; // Số màu trắng nếu nền đen
+    
+    for (let num = 1; num < 13; num++) {
+        let ang = num * Math.PI / 6;
+        ctx.rotate(ang);
+        ctx.translate(0, -radius * 0.85);
+        ctx.rotate(-ang);
+        ctx.fillText(num.toString(), 0, 0);
+        ctx.rotate(ang);
+        ctx.translate(0, radius * 0.85);
+        ctx.rotate(-ang);
+    }
+}
+
+function drawTime(ctx, radius) {
+    const now = new Date();
+    let hour = now.getHours();
+    let minute = now.getMinutes();
+    let second = now.getSeconds();
+    
+    // Màu kim (Trắng nếu dark mode, đen nếu thường)
+    const handColor = document.body.classList.contains('dark-mode') ? '#fff' : '#000';
+
+    hour = hour % 12;
+    hour = (hour * Math.PI / 6) +
+           (minute * Math.PI / (6 * 60)) +
+           (second * Math.PI / (360 * 60));
+    drawHand(ctx, hour, radius * 0.5, radius * 0.07, handColor);
+    
+    minute = (minute * Math.PI / 30) + (second * Math.PI / (30 * 60));
+    drawHand(ctx, minute, radius * 0.8, radius * 0.07, handColor);
+    
+    second = (second * Math.PI / 30);
+    drawHand(ctx, second, radius * 0.9, radius * 0.02, "red"); // Kim giây giữ màu đỏ
+}
+
+function drawHand(ctx, pos, length, width, color) {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.strokeStyle = color; // Thêm tham số màu
+    ctx.moveTo(0, 0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
+
+// --- HÀM MỚI: XỬ LÝ LỜI CHÀO & NGÀY THÁNG ---
+function updateGreeting() {
+    const now = new Date();
+    const hour = now.getHours();
+    const greetingText = document.getElementById("greeting-text");
+    const dateText = document.getElementById("current-date");
+    
+    let message = "";
+    if (hour >= 0 && hour < 6) message = "Chúc ngày mới tốt lành 🌌";
+    else if (hour >= 6 && hour < 11) message = "Chào buổi sáng ☀️";
+    else if (hour >= 11 && hour < 14) message = "Chào buổi trưa 🍚";
+    else if (hour >= 14 && hour < 18) message = "Chào buổi chiều 🍵";
+    else if (hour >= 18 && hour < 22) message = "Chào buổi tối 🌙";
+    else message = "Khuya rồi, ngủ thôi 😴";
+
+    if(greetingText) greetingText.innerText = message;
+    
+    // Cập nhật ngày tháng
+    if(dateText) {
+        dateText.innerText = now.toLocaleDateString('vi-VN', { 
+            weekday: 'long', year: 'numeric', month: 'numeric', day: 'numeric' 
+        });
+    }
+}
+
+// Gọi hàm chạy khi web tải xong
+document.addEventListener('DOMContentLoaded', initLab9Clock);
