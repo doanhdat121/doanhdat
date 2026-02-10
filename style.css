@@ -540,3 +540,8 @@ body.dark-mode .video-card:hover {
     box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
     border-color: #555 !important;
 }
+
+
+.logo-icon {
+    transition: all 0.3s ease; /* Logo sẽ thay đổi mượt mà thay vì giật cục */
+}
