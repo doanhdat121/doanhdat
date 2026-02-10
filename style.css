@@ -545,3 +545,65 @@ body.dark-mode .video-card:hover {
 .logo-icon {
     transition: all 0.3s ease; /* Logo sẽ thay đổi mượt mà thay vì giật cục */
 }
+
+
+/* =========================================
+   9. TÍCH HỢP ĐỒNG HỒ LAB 9
+   ========================================= */
+/*khung bao quanh chia 2 cột*/
+.profile-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 20px;
+   position: relative;
+   z-index: 2;
+   flex-wrap: wrap; 
+}
+
+/*the chua dong ho*/
+.clock-card {
+   background: white;
+   padding: 15px;
+   border-radius: 20px;
+   box-shardow: 0 4px 15px rgba(0, 0, 0, 0.1);
+   text-align: center;
+   width: 200px;
+   animation: fadeIn 0.8s ease;
+}
+
+/*chinh lai canvas cho can giua*/
+.clock-card canvas{
+   display: block;
+   margin: 0 auto;
+}
+
+/*phan chu loi xin chao*/
+.greeting-box h3 {
+   margin: 10px 0 5px 0;
+   font-size: 18px;
+   color: #333;
+}
+
+.greeting-box p {
+   margin: 0;
+   font-size: 13px;
+   color: #777;
+}
+
+body.dark-mode .clock-card {
+   background: #1e1e1e;
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+   border: 1px solid #333;
+}
+
+body.dark-mode .greeting-box h3 {color: #fff;}
+body.dark-mode .greeting-box p {color: #aaa;}
+
+/*mobile*/
+@media (max-width: 768px) {
+   .profile-container {
+      flex-direction: column;
+   }
+   
+}
