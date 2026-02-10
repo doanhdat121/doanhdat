@@ -7,7 +7,7 @@ body {
     padding: 0;
     background-color: #f9f9f9;
     color: #0f0f0f;
-    padding-top: 50px; /* Chừa chỗ cho menu trên cùng */
+    padding-top: 80px; /* Chừa chỗ cho menu trên cùng */
 }
 
 .main-content, .container {
@@ -602,8 +602,84 @@ body.dark-mode .greeting-box p {color: #aaa;}
 
 /*mobile*/
 @media (max-width: 768px) {
-   .profile-container {
-      flex-direction: column;
-   }
-   
+  .profile-container {
+        flex-direction: column; /* Xếp dọc (như cũ) */
+        
+        /* QUAN TRỌNG NHẤT: Xóa margin âm, đổi thành số dương */
+        margin-top: 10px !important; 
+        
+        gap: 20px;
+    }
+
+    /* Chỉnh lại ảnh Tết cho gọn gàng hơn trên mobile */
+    .tet-banner {
+        width: 90%;      /* Không để to quá */
+        margin-top: 10px; /* Cách menu ra một chút */
+    }
+    
+    /* Chỉnh lại thẻ đồng hồ cho cân đối */
+    .clock-card {
+        width: 100%;
+        max-width: 300px; /* Giới hạn chiều rộng cho đẹp */
+    }
+   /* 1. Thiết lập lại thanh Menu để các phần tử không đè nhau */
+    .yt-navbar {
+        justify-content: space-between; /* Chia đều khoảng cách */
+        padding: 0 10px; /* Giảm lề 2 bên cho rộng chỗ */
+    }
+
+    /* 2. Phần Logo (Bên trái): Giữ nguyên, không cho co lại */
+    .start-section {
+        flex-shrink: 0; 
+    }
+
+    /* 3. Phần Tìm kiếm (Ở giữa): Cho phép co nhỏ tối đa */
+    .center-section {
+        flex: 1; /* Chiếm phần không gian còn lại */
+        margin: 0 5px; /* Cách 2 bên một chút */
+        min-width: 0; /* Quan trọng: Cho phép co nhỏ hơn nội dung bên trong */
+        display: flex; 
+        justify-content: flex-end; /* Đẩy icon tìm kiếm sang phải nếu quá chật */
+    }
+
+    /* Thu nhỏ ô nhập liệu */
+    .search-box {
+        width: 100%; /* Tự co giãn theo khung */
+        border: 1px solid #ccc; /* Viền mỏng lại */
+        padding: 0;
+    }
+    
+    .search-box input {
+        width: 100%; /* Input tự co giãn */
+        min-width: 50px; /* Chiều rộng tối thiểu để còn gõ được chữ */
+        font-size: 13px; /* Chữ nhỏ lại xíu */
+    }
+    
+    /* Nếu màn hình quá bé (như iPhone 5/SE), ẩn luôn ô nhập, chỉ hiện nút kính lúp */
+    @media (max-width: 400px) {
+        .search-box {
+            border: none;
+            background: transparent;
+        }
+        .search-box input {
+            display: none; /* Ẩn ô nhập */
+        }
+        .search-btn {
+            background: transparent;
+            border: none;
+            color: #333; /* Màu kính lúp */
+            font-size: 18px;
+            padding: 5px;
+        }
+        /* Kính lúp màu trắng khi dark mode */
+        body.dark-mode .search-btn {
+            color: white;
+        }
+    }
+
+    /* 4. Phần Nút Dark Mode (Bên phải): Không bao giờ được bị che */
+    .end-section {
+        flex-shrink: 0; /* Không cho phép bị ép nhỏ lại */
+        margin-left: 0;
+    }
 }
