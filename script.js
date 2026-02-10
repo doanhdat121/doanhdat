@@ -111,3 +111,35 @@ function toggleChillMusic(element) {
         console.log("Đã tắt nhạc.");
     }
 }
+// ... (Code cũ của bạn ở trên) ...
+
+/* 6. TÍNH NĂNG DARK MODE / LIGHT MODE
+*/
+const themeBtn = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Kiểm tra xem người dùng đã từng chọn Dark Mode chưa (lưu trong máy)
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme === 'dark') {
+    body.classList.add('dark-mode');
+    themeBtn.textContent = '☀️'; // Đổi icon thành mặt trời
+}
+
+themeBtn.addEventListener('click', function() {
+    // Thêm hoặc xóa class dark-mode ở body
+    body.classList.toggle('dark-mode');
+    
+    // Kiểm tra xem đang là chế độ nào để đổi icon và lưu lại
+    if (body.classList.contains('dark-mode')) {
+        themeBtn.textContent = '☀️'; // Chuyển thành icon Sáng
+        localStorage.setItem('theme', 'dark'); // Lưu lại "đây là dark"
+        
+        // Hiệu ứng chuyển đổi logo (nếu logo là ảnh đen)
+        // document.querySelector('.logo-icon').style.filter = "invert(1)"; 
+    } else {
+        themeBtn.textContent = '🌙'; // Chuyển thành icon Tối
+        localStorage.setItem('theme', 'light'); // Lưu lại "đây là light"
+        
+        // document.querySelector('.logo-icon').style.filter = "invert(0)";
+    }
+});
