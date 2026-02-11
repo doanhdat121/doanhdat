@@ -683,3 +683,29 @@ body.dark-mode .greeting-box p {color: #aaa;}
         margin-left: 0;
     }
 }
+/* =========================================
+   THAY ĐỔI CON TRỎ CHUỘT (CUSTOM CURSOR)
+   ========================================= */
+
+/* 1. Con trỏ mặc định cho toàn trang web */
+body {
+    /* Cú pháp: url('đường-dẫn-ảnh'), auto; */
+    /* Số 0 0 là tọa độ điểm click (góc trên cùng bên trái của ảnh) */
+    cursor: url('cursor.png') 0 0, auto; 
+}
+
+/* 2. Con trỏ khi rê vào Link, Nút bấm (dạng bàn tay) */
+a, button, .btn, .video-card, .menu-icon, .theme-btn {
+    cursor: url('pointer.png') 16 0, pointer; 
+}
+
+/* (Tùy chọn) Con trỏ khi đang gõ chữ trong ô tìm kiếm */
+/* (Đã sửa) Con trỏ khi rê vào ô nhập liệu hoặc văn bản */
+input[type="text"], textarea, .search-box input {
+    /* Giải thích: url('text-cursor.png') 16 16, text;
+       - 16 16: Là tọa độ tâm (giả sử ảnh 32x32). 
+         Nó giúp điểm click nằm chính giữa hình ảnh chứ không phải ở góc.
+       - text: Là con trỏ dự phòng nếu ảnh lỗi.
+    */
+    cursor: url('text-cursor.png') 16 16, text !important;
+}
