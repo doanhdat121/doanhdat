@@ -8,9 +8,7 @@ body {
     background-color: #f9f9f9;
     color: #0f0f0f;
     padding-top: 80px; /* Chừa chỗ cho menu trên cùng */
-   /* Quan trọng: Để định vị lớp nền bên dưới */
-    position: relative; 
-    min-height: 100vh;
+
 }
 
 .main-content, .container {
@@ -18,44 +16,6 @@ body {
     margin: 0 auto;
     padding: 0 15px;
 }
-/* --- LỚP NỀN CHỨA ẢNH RIÊNG BIỆT --- */
-body::before {
-    content: "";
-    position: fixed; /* Cố định nền để khi cuộn không bị trôi */
-    top: 0; left: 0; 
-    width: 100%; height: 100%;
-    
-    /* Thay ảnh của bạn vào đây */
-    background-image: url('anhnen.jpg'); 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    /* Đẩy xuống dưới cùng để không che mất chữ */
-    z-index: -1; 
-    
-    /* Hiệu ứng chuyển màu mượt mà */
-    transition: filter 0.3s ease;
-}
-
-/* --- TỰ ĐỘNG ĐẢO MÀU ẢNH KHI VÀO DARK MODE --- */
-@media (prefers-color-scheme: dark) {
-    body::before {
-        /* ĐÂY LÀ LỆNH BẠN CẦN: Nghịch đảo màu ảnh (Trắng -> Đen) */
-        filter: invert(1) hue-rotate(180deg); 
-    }
-    
-    /* Cập nhật lại màu chữ cho dễ đọc trên nền tối */
-    body { color: #e0e0e0; }
-    
-    /* Các phần Navbar/Card tối màu giữ nguyên như code trước... */
-    .yt-navbar { background-color: rgba(20, 20, 20, 0.8); border-bottom: 1px solid #333; }
-    .video-card { background-color: #1e1e1e; border: 1px solid #333; color: #fff; }
-    .card-title, h1, .section-title { color: #fff !important; }
-    .search-box input { background: rgba(255,255,255,0.1); color: #fff; }
-    .logo-icon { filter: invert(1); } /* Đảo màu logo nếu cần */
-}
-
 /* =========================================
    2. NAVBAR (THANH MENU TRÊN CÙNG) - ĐÃ NÂNG CẤP GLASSMORPHISM
    ========================================= */
