@@ -104,12 +104,12 @@ body {
 
 /* Khung thông tin cá nhân */
 .header-content {
-    background: white;
+
     border-radius: 12px;
     padding: 15px;
     display: inline-block;
     min-width: 280px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+
 }
 
 /* Avatar tròn ở giữa */
@@ -506,10 +506,7 @@ body.dark-mode h1,
 body.dark-mode .section-title {
     color: #ffffff;
 }
-body.dark-mode .header-content {
-    background: #1e1e1e; /* Hộp thông tin tối màu */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-}
+
 body.dark-mode .student-info,
 body.dark-mode .sub-info {
     color: #bbb;
@@ -562,7 +559,7 @@ body.dark-mode .video-card:hover {
 
 /*the chua dong ho*/
 .clock-card {
-   background: white;
+
    padding: 15px;
    border-radius: 20px;
    box-shardow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -591,7 +588,7 @@ body.dark-mode .video-card:hover {
 }
 
 body.dark-mode .clock-card {
-   background: #1e1e1e;
+
    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
    border: 1px solid #333;
 }
