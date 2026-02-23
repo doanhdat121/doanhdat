@@ -25,8 +25,8 @@ body {
     height: 60px; /* Tăng nhẹ chiều cao để thoáng hơn */
     
     /* Hiệu ứng Glassmorphism (Kính mờ) */
-    background-color: rgba(255, 255, 255, 0.75); /* Màu trắng trong suốt 75% */
-    backdrop-filter: blur(12px) saturate(180%); /* Làm mờ nền bên dưới */
+    background-color: rgba(255, 255, 255, 0.1); /* Màu trắng trong suốt 75% */
+    backdrop-filter: blur(10px) saturate(180%); /* Làm mờ nền bên dưới */
     -webkit-backdrop-filter: blur(12px) saturate(180%); /* Hỗ trợ trình duyệt Safari */
     
     display: flex;
