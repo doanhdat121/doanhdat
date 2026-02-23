@@ -761,7 +761,7 @@ input[type="text"], textarea, .search-box input {
 
 .mw-text-box p {
     margin: 0;
-    font-size: 22px;
+    font-size: 18px;
     color: #2c2c2c; /* Đen xám */
     line-height: 1.4;
 }
