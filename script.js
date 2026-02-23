@@ -267,8 +267,7 @@ function drawHand(ctx, pos, length, width, color) {
     ctx.stroke();
     ctx.rotate(-pos);
 }
-
-// --- HÀM MỚI: XỬ LÝ LỜI CHÀO & NGÀY THÁNG ---
+// --- HÀM 1: XỬ LÝ LỜI CHÀO & NGÀY THÁNG ---
 function updateGreeting() {
     const now = new Date();
     const hour = now.getHours();
@@ -281,17 +280,54 @@ function updateGreeting() {
     else if (hour >= 11 && hour < 14) message = "Chào buổi trưa 🍚";
     else if (hour >= 14 && hour < 18) message = "Chào buổi chiều 🍵";
     else if (hour >= 18 && hour < 22) message = "Chào buổi tối 🌙";
-    else message = "Khuya rồi, ngủ thôi 😴";
+    else message = "Ngủ thôi, deadline mai tính 😴";
 
-    if(greetingText) greetingText.innerText = message;
+    if (greetingText) greetingText.innerText = message;
     
-    // Cập nhật ngày tháng
-    if(dateText) {
+    if (dateText) {
         dateText.innerText = now.toLocaleDateString('vi-VN', { 
             weekday: 'long', year: 'numeric', month: 'numeric', day: 'numeric' 
         });
     }
 }
 
-// Gọi hàm chạy khi web tải xong
-document.addEventListener('DOMContentLoaded', initLab9Clock);
+// --- HÀM 2: TÍNH SỐ NGÀY THỨ 2 CÒN LẠI ---
+function updateMondayCountdown() {
+    const countEL = document.getElementById("monday-count");
+    if (!countEL) return;
+
+    // Ngày mục tiêu
+    const targetDate = new Date("2027-02-06T00:00:00");
+    let currentDate = new Date();
+
+    // Đưa thời gian về 0h 
+    currentDate.setHours(0, 0, 0, 0);
+    targetDate.setHours(0, 0, 0, 0);
+
+    let mondayCount = 0;
+    let tempDate = new Date(currentDate);
+    
+    // Bắt đầu đếm từ ngày mai
+    tempDate.setDate(tempDate.getDate() + 1);
+
+    while (tempDate <= targetDate) {
+        if (tempDate.getDay() === 1) { // 1 là Thứ Hai
+            mondayCount++;
+        }
+        tempDate.setDate(tempDate.getDate() + 1);
+    }
+
+    
+    countEL.innerText = mondayCount;
+}
+
+// --- KHỞI TẠO KHI TRANG TẢI XONG ---
+document.addEventListener('DOMContentLoaded', function() {
+    // Chạy ngay lập tức khi load trang
+    updateGreeting();
+    updateMondayCountdown();
+
+    // Cập nhật lại mỗi giờ (3600000 ms)
+    setInterval(updateGreeting, 3600000);
+    setInterval(updateMondayCountdown, 3600000);
+});
