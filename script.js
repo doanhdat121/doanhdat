@@ -323,11 +323,12 @@ function updateMondayCountdown() {
 
 // --- KHỞI TẠO KHI TRANG TẢI XONG ---
 document.addEventListener('DOMContentLoaded', function() {
-    // Chạy ngay lập tức khi load trang
-    updateGreeting();
+    // 1. Kích hoạt đồng hồ Lab 9 (Hàm này cũng sẽ tự động chạy updateGreeting mỗi giây)
+    initLab9Clock();
+
+    // 2. Tính ngay số ngày thứ 2 lúc vừa vào web
     updateMondayCountdown();
 
-    // Cập nhật lại mỗi giờ (3600000 ms)
-    setInterval(updateGreeting, 3600000);
+    // 3. Cho bộ đếm thứ 2 tự động cập nhật lại mỗi giờ (3600000 ms)
     setInterval(updateMondayCountdown, 3600000);
 });
