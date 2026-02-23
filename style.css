@@ -708,3 +708,44 @@ input[type="text"], textarea, .search-box input {
     */
     cursor: url('text-cursor.png') 16 16, text !important;
 }
+
+/* =========================================
+   10. ĐẾM NGƯỢC TẾT NGUYÊN ĐÁN
+   ========================================= */
+
+.countdown-box {
+   margin-top: 15px;
+   padding-top: 12px;
+   border-top: 1px dashed #e0e0e0;
+}
+
+#tet-countdown {
+   margin: 0;
+   font-size: 15px
+   color: #d32f2f; /*màu đỏ cho chữ*/
+}
+
+#tet-coundown strong {
+   font-size: 22px;
+   font-weight: 700;
+}
+
+.tet-date-target {
+   display: block;
+   margin-top: 4px;
+   font-size: 11px;
+   color: #888;
+}
+
+/*dark mode*/
+body.dark-mode .countdown-box {
+   border-top-color: #444
+}
+
+body.dark-mode #tet-countdown {
+   color: #ff5252;
+}
+
+body.dark-mode .tet-date-target {
+   color: #999;
+}
