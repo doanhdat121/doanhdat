@@ -25,9 +25,9 @@ body {
     height: 60px; /* Tăng nhẹ chiều cao để thoáng hơn */
     
     /* Hiệu ứng Glassmorphism (Kính mờ) */
-    background-color: rgba(255, 255, 255, 0.1); /* Màu trắng trong suốt 75% */
-    backdrop-filter: blur(10px) saturate(180%); /* Làm mờ nền bên dưới */
-    -webkit-backdrop-filter: blur(12px) saturate(180%); /* Hỗ trợ trình duyệt Safari */
+    background-color: rgba(255, 255, 255, 0.4); /* Màu trắng trong suốt 75% */
+    backdrop-filter: blur(20px) saturate(380%); /* Làm mờ nền bên dưới */
+    -webkit-backdrop-filter: blur(12px) saturate(380%); /* Hỗ trợ trình duyệt Safari */
     
     display: flex;
     align-items: center;
@@ -188,10 +188,7 @@ h1 { margin: 2px 0; font-size: 18px; color: #0f0f0f; }
     box-shadow: none; /* Bỏ đổ bóng theo yêu cầu */
     z-index: 10; 
 }
-.video-card:hover { 
-    transform: scale(1.06); /* Phóng to thẻ giúp phần nền màu phía sau rộng ra */
-    box-shadow: none; /* Bỏ đổ bóng theo yêu cầu */
-    z-index: 10; 
+
 }
 .thumbnail-container { 
     width: 100%; 
@@ -201,8 +198,13 @@ h1 { margin: 2px 0; font-size: 18px; color: #0f0f0f; }
     border-radius: 12px; 
 }
 .thumbnail-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
-.video-card:hover .thumbnail-container img { transform: scale(1.08); }
-
+.video-card:hover .thumbnail-container img { 
+    transform: none;
+ }
+.video-card:hover .thumbnail-container { 
+    transform: scale(0.943); 
+    transform-origin: top center; /* Giữ cho ảnh dính sát lên mép trên, không bị hở */
+}
 .time-stamp {
     position: absolute; bottom: 5px; right: 5px;
     background: rgba(0,0,0,0.8); color: white;
@@ -335,7 +337,11 @@ h1 { margin: 2px 0; font-size: 18px; color: #0f0f0f; }
 .video-card:hover .thumb-placeholder span {
     transform: rotate(20deg) scale(1.2);
 }
-
+/* 3. (Tùy chọn) Ép chữ cũng đứng im không bị to lên theo nền */
+.video-card:hover .card-info { 
+    transform: scale(0.943); 
+    transform-origin: top center;
+}
 
 /* --- MÀU GRADIENT CHO CÁC BÀI LAB 4 --- */
 /* Bài Login: Xanh tím */
@@ -452,10 +458,10 @@ h1 { margin: 2px 0; font-size: 18px; color: #0f0f0f; }
 /* Ghi đè lại class .yt-navbar cũ để mờ đẹp hơn */
 .yt-navbar {
     /* Giảm độ đục của nền trắng xuống để thấy nội dung bên dưới mờ ảo */
-    background-color: rgba(255, 255, 255, 0.6) !important; 
+    background-color: rgba(255, 255, 255, 0.4) !important; 
     
     /* Tăng độ mờ (Blur) lên cao */
-    backdrop-filter: blur(20px) saturate(180%) !important;
+    backdrop-filter: blur(20px) saturate(380%) !important;
     -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
     
     /* Thêm viền trắng mờ để tạo cảm giác tấm kính dày */
