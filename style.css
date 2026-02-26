@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
 /* =========================================
    1. CÀI ĐẶT CƠ BẢN
    ========================================= */
@@ -801,6 +802,7 @@ body.dark-mode .monday-widget {
    11. NÚT CHỌN NGÔN NGỮ (LANGUAGE SWITCHER)
    ========================================= */
 .lang-btn {
+    font-family: 'Noto Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
     background: rgba(255, 255, 255, 0.8);
     border: 1px solid #d3d3d3;
     border-radius: 20px;
