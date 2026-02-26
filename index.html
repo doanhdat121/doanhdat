@@ -24,13 +24,21 @@
 			</div>
 			<div class="center-section">
 				<div class="search-box">
-					<input type="text" placeholder="Tìm kiếm bài tập...">
+					<input type="text" data-i18n="search_ph" placeholder="Tìm kiếm bài tập...">
 					<button class="search-btn">🔍</button>
 				</div>
 			</div>
 			<div class="end-section">
+				<select id="lang-switch" class="lang-btn">
+					<option value="vi">🇻🇳 VN</option>
+					<option value="ko">🇰🇷 KR</option>
+                    <option value="zh">🇨🇳 CN</option>
+				</select>
 				<button id="theme-toggle" class="theme-btn" title="Chế độ tối"> 🌙 </button>
 			</div>
+			<audio id="audio-vi" src="chao-vi.mp3" preload="auto"></audio>
+            <audio id="audio-ko" src="chao-ko.mp3" preload="auto"></audio>
+            <audio id="audio-zh" src="chao-zh.mp3" preload="auto"></audio>
 			<!--
         <div class="end-section"><img src="banner.png" alt="Avatar" class="user-avatar"></div>
         -->
@@ -61,14 +69,14 @@
 						<img src="banner.webp" alt="Anh bia" class="banner-img">
 						<h1>Đỗ Anh Đạt <span class="verify-icon">✅</span>
 						</h1>
-						<p class="student-info">MSSV: 2410277 • Lớp: THK48SP</p>
-						<p class="sub-info">Thiết kế web</p>
-						<button class="subscribe-btn">ĐĂNG KÝ</button>
+						<p class="student-info" data-i18n="student_info">MSSV: 2410277 • Lớp: THK48SP</p>
+						<p class="sub-info" data-i18n="sub_info">Thiết kế web</p>
+						<button class="subscribe-btn" data-i18n="subscribe">ĐĂNG KÝ</button>
 					</div>
 				</div>
 			</div>
 			<div class="container">
-				<h2 class="section-title">📂 Các bài lab</h2>
+				<h2 class="section-title" data-i18n="labs_title">📂 Các bài lab</h2>
 				<div class="video-grid">
 					<a href="lab1/index.html" target="_blank" class="video-card">
 						<div class="thumbnail-container">
@@ -156,7 +164,7 @@
 			</div>
 			<hr class="divider">
 			<div class="container">
-				<h2 class="section-title">🏠 Bài tập về nhà</h2>
+				<h2 class="section-title" data-i18n="homework_title">🏠 Bài tập về nhà</h2>
 				<div class="homework-layout">
 					<div class="homework-left">
 						<div class="video-grid shorts-grid">
@@ -179,7 +187,7 @@
 			</div>
 			<div class="footer">
 				<p>&copy; 2026 DoAnhDat Inc.</p>
-				<p>Trang web này có sự hỗ trợ của AI</p>
+				<p data-i18n="endnote">Trang web này có sự hỗ trợ của AI</p>
 			</div>
 		</div>
 		<script src="script.js"></script>
