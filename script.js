@@ -332,3 +332,86 @@ document.addEventListener('DOMContentLoaded', function() {
     // 3. Cho bộ đếm thứ 2 tự động cập nhật lại mỗi giờ (3600000 ms)
     setInterval(updateMondayCountdown, 3600000);
 });
+
+
+/* =========================================
+   8. TÍNH NĂNG ĐA NGÔN NGỮ (DỊCH, ẢNH, ÂM THANH)
+   ========================================= */
+// 1. Tạo từ điển dịch thuật
+const translations = {
+    "vi": {
+        "labs_title": "📂 Các bài lab",
+        "homework_title": "🏠 Bài tập về nhà",
+        "subscribe": "ĐĂNG KÝ",
+        "search_ph": "Tìm kiếm bài tập...",
+        "student_info": "MSSV: 2410277 • Lớp: THK48SP",
+        "sub_info": "Thiết kế web",
+        "endnote": "Trang web này có sự hỗ trợ của AI"
+    },
+    "ko": {
+        "labs_title": "📂 랩 과제",
+        "homework_title": "🏠 숙제",
+        "subscribe": "구독",             
+        "search_ph": "과제 검색...",       
+        "student_info": "학번: 2410277 • 반: THK48SP",
+        "sub_info": "웹 디자인",
+        "endnote": "이 웹사이트는 AI의 지원을 받습니다"
+    },
+    "zh": {
+        "labs_title": "📂 实验作业",
+        "homework_title": "🏠 家庭作业",
+        "subscribe": "订阅",
+        "search_ph": "搜索作业...",      
+        "student_info": "学号: 2410277 • 班级: THK48SP",
+        "sub_info": "网页设计",
+        "endnote": "本网站由AI提供支持"
+    }
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+    const langSwitch = document.getElementById('lang-switch');
+    const bannerImg = document.querySelector('.banner-img');
+    const searchInput = document.querySelector('.search-box input');
+    // Thêm dòng này để lấy thẻ ảnh của hộp phát nhạc
+    const musicBannerImg = document.querySelector('.music-banner-right img');
+    // Lắng nghe sự kiện khi chọn ngôn ngữ khác
+    langSwitch.addEventListener('change', function(e) {
+        const selectedLang = e.target.value;
+
+        // 1. PHÁT ÂM THANH
+        // Dừng tất cả âm thanh đang phát trước khi phát cái mới
+        document.querySelectorAll('audio').forEach(audio => {
+            audio.pause();
+            audio.currentTime = 0;
+        });
+        const soundToPlay = document.getElementById(`audio-${selectedLang}`);
+        if(soundToPlay) {
+            soundToPlay.play();
+        }
+
+        // 2. ĐỔI ẢNH BANNER
+        // Đảm bảo bạn đã lưu ảnh tên: banner-vi.webp, banner-ko.webp...
+        if(bannerImg) {
+            bannerImg.src = `banner-${selectedLang}.webp`;
+        }
+       // 2.1 ĐỔI ẢNH MUSIC BANNER (MỚI THÊM)
+        if(musicBannerImg) {
+            // Thay đuôi .webp thành .png hoặc .jpg nếu ảnh của bạn lưu định dạng khác nhé
+            musicBannerImg.src = `music-${selectedLang}.webp`; 
+        }
+        // 3. DỊCH VĂN BẢN (Quét toàn bộ thẻ có data-i18n)
+        const elementsToTranslate = document.querySelectorAll('[data-i18n]');
+        elementsToTranslate.forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            // Nếu từ điển có từ khóa này thì thay thế
+            if (translations[selectedLang][key]) {
+                el.innerText = translations[selectedLang][key];
+            }
+        });
+
+        // 4. DỊCH RIÊNG Ô TÌM KIẾM (Placeholder)
+        if (searchInput && translations[selectedLang]["search_ph"]) {
+            searchInput.placeholder = translations[selectedLang]["search_ph"];
+        }
+    });
+});
