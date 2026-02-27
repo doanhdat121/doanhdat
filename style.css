@@ -201,8 +201,8 @@ h1 { margin: 2px 0; font-size: 18px; color: #0f0f0f; }
     overflow: hidden; 
     border-radius: 12px; 
 }
-.thumbnail-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
-.video-card:hover .thumbnail-container img { transform: scale(1.08); }
+.thumbnail-container img { width: 100%; height: 100%; transition: transform 0.3s ease; }
+.video-card:hover .thumbnail-container img { transform: scale(1.08); border: 4px solid #3498db; }
 
 .time-stamp {
     position: absolute; bottom: 5px; right: 5px;
