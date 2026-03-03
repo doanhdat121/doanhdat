@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Máy tính</title>
+	<script src="js/script.js"></script>
+</head>
+<body>
+	<h1>Máy tính</h1>
+	<form name="Calculator" onsubmit="return false;">
+		<label for="numberA">a:</label>
+		<input type="number" name="numberA" placeholder="Nhập a"><br><br>
+
+		<label for="numberB">b:</label>
+		<input type="number" name="numberB" placeholder="Nhập b"><br><br>
+
+		<button type="button" onclick="calculate('+')">+</button>
+		<button type="button" onclick="calculate('-')">-</button>
+		<button type="button" onclick="calculate('*')">*</button>
+		<button type="button" onclick="calculate('/')">/</button><br><br>
+
+		<label for="result">Kết quả:</label>
+		<input type="text" name="result" readonly><br><br>
+	</form>
+</body>
+</html>

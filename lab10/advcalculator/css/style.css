@@ -1,0 +1,61 @@
+/* Đưa máy tính ra giữa */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #EAEAEA;
+    font-family: Arial, sans-serif;
+}
+
+/* nền máy tính */
+form[name="Keypad"] {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1.5px solid #303030;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Tạo khoảng cách giữa các nút */
+table {
+    border-collapse: separate;
+    border-spacing: 12px; 
+}
+
+/* Màn hình hiển thị */
+input[name="ReadOut"] {
+    height: 45px;
+    font-size: 18px;
+    text-align: right;
+    padding-right: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+input[type="button"] {
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    background-color: #3E79F6;
+    cursor: pointer;
+}
+
+/* nút C và CE */
+input[name="btnClear"], 
+input[name="btnClearEntry"] {
+    background-color: #C3444A;
+}
+
+/* nút = */
+input[name="btnEquals"] {
+    background-color: #5DA552;
+    width: 95%; 
+}
