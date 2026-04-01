@@ -1,0 +1,310 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 100vh;
+}
+
+h3 {
+    color: #2c3e50;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+p {
+    margin: 5px 0;
+    color: #34495e;
+    line-height: 1.5;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 30px;
+    box-shadow: 
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        0 0 0 3px rgba(255, 255, 255, 0.05),
+        0 0 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+#location-info {
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 
+        0 0 0 1px rgba(255, 255, 255, 0.3),
+        0 8px 16px rgba(0, 0, 0, 0.1);
+    max-width: 95%;
+}
+
+.info-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 25px;
+    padding: 0 15px;
+}
+
+.info-row > div {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 
+        0 0 0 1px rgba(0, 0, 0, 0.05),
+        0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: auto;
+    min-height: 200px;
+}
+
+.info-row > div:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 0 0 2px rgba(66, 153, 225, 0.2),
+        0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+#coordinates, #address, #weather-info, #hourly-weather {
+    margin: 0;
+    padding: 20px;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+}
+
+#coordinates:hover, #address:hover, #weather-info:hover {
+    transform: translateY(-2px);
+}
+
+#weather-info p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+#weather-info span {
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+#hourly-weather {
+    min-height: 300px;
+    overflow: hidden;
+}
+
+.hourly-header {
+    display: none;
+}
+
+#hourly-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 5px 0;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+    max-height: calc(100% - 60px);
+    flex: 1;
+    margin-top: 15px;
+}
+
+#hourly-list::-webkit-scrollbar {
+    height: 8px;
+}
+
+#hourly-list::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+}
+
+#hourly-list::-webkit-scrollbar-thumb {
+    background: rgba(66, 153, 225, 0.5);
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+#hourly-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(66, 153, 225, 0.7);
+}
+
+.hourly-item {
+    min-width: 150px;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #eee;
+    background: white;
+    box-shadow: 
+        0 0 0 1px rgba(0, 0, 0, 0.05),
+        0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.hourly-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 0 0 2px rgba(66, 153, 225, 0.2),
+        0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.hourly-item .time {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+    background: linear-gradient(135deg, #f6f9fc 0%, #f1f5f9 100%);
+    margin: -15px -15px 10px -15px;
+    padding: 15px;
+    border-radius: 12px 12px 0 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.hourly-item .temp {
+    color: #e74c3c;
+    font-size: 1.3em;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.hourly-item .humidity {
+    color: #3498db;
+    margin: 8px 0;
+    font-weight: 500;
+    background: linear-gradient(to right, #ebf8ff 0%, #fff 100%);
+    padding: 8px;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.hourly-item .wind {
+    color: #2ecc71;
+    margin: 8px 0;
+    font-weight: 500;
+    background: linear-gradient(to right, #f0fff4 0%, #fff 100%);
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.hourly-item .temp::before {
+    content: "Nhiệt độ:";
+    display: block;
+    font-size: 0.8em;
+    color: #666;
+    margin-bottom: 2px;
+}
+
+.hourly-item .humidity::before {
+    content: "Độ ẩm:";
+    display: block;
+    font-size: 0.8em;
+    color: #666;
+    margin-bottom: 2px;
+}
+
+.hourly-item .wind::before {
+    content: "Gió:";
+    display: block;
+    font-size: 0.8em;
+    color: #666;
+    margin-bottom: 2px;
+}
+
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+}
+
+#loading img {
+    width: 80px;
+    height: 80px;
+    filter: drop-shadow(0 0 8px rgba(66, 153, 225, 0.3));
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.error {
+    display: none;
+    background: linear-gradient(to right, #fff5f5 0%, #fff 100%);
+    color: #c53030;
+    padding: 12px 20px;
+    border-radius: 12px;
+    border-left: 4px solid #e53e3e;
+    margin-top: 20px;
+    font-weight: 500;
+    box-shadow: 
+        0 0 0 1px rgba(229, 62, 62, 0.1),
+        0 4px 6px rgba(229, 62, 62, 0.1);
+    animation: slideIn 0.3s ease-out;
+    transform-origin: top;
+}
+
+.error.show {
+    display: block;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.9); opacity: 0.9; }
+    50% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(0.9); opacity: 0.9; }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 15px auto;
+        padding: 15px;
+    }
+
+    #location-info {
+        padding: 15px;
+    }
+
+    .info-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0;
+    }
+    
+    .info-row > div {
+        margin-bottom: 15px;
+        min-height: auto;
+        padding: 15px;
+    }
+}

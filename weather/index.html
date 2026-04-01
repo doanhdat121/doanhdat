@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Dự báo thời tiết</title>
+	<link type="image/x-icon" href="img/favicon.ico" rel="shortcut icon" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+		<div id="loading">
+			<img src="img/loading.gif" alt="Đang tải...">
+		</div>
+		<div id="location-info">
+			<!-- First row -->
+			<div class="info-row">
+				<div id="coordinates">
+					<h3>Tọa độ</h3>
+					<p><b>Vĩ độ</b>: <span id="latitude"></span></p>
+					<p><b>Kinh độ</b>: <span id="longitude"></span></p>
+				</div>
+				<div id="address">
+					<h3>Địa điểm hiện tại:</h3>
+					<p id="address-text"></p>
+				</div>
+			</div>
+			
+			<!-- Second row -->
+			<div class="info-row">
+				<div id="weather-info">
+					<h3>Thông tin thời tiết hiện tại:</h3>
+					<p>Thời gian: <span id="current-time"></span></p>
+					<p>Nhiệt độ: <span id="temperature"></span></p>
+					<p>Tốc độ gió: <span id="wind-speed"></span></p>
+					<p>Múi giờ: <span id="timezone"></span></p>
+					<p>Độ cao: <span id="elevation"></span></p>
+				</div>
+				<div id="hourly-weather">
+					<h3>Dự báo thời tiết theo giờ:</h3>
+					<div class="hourly-header">
+						<div>Thời gian</div>
+						<div>Nhiệt độ</div>
+						<div>Độ ẩm</div>
+						<div>Tốc độ gió</div>
+					</div>
+					<div id="hourly-list"></div>
+				</div>
+			</div>
+			
+			<div id="error-message" class="error"></div>
+			
+		</div>
+	</div>
+	
+	<script src="js/script.js"></script>
+</body>
+</html>
