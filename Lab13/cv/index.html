@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nguyễn Văn A | CV Online</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <button type="button" class="toggle-dark">🌙</button>
+    <div id="pdf-content">
+        <header>
+            <div class="avatar-wrapper">
+                <img src="img/avatar.jpg" alt="Avatar" class="avatar">
+            </div>
+            <h1>Nguyễn Văn A</h1>
+            <p>Full-stack Developer</p>
+        </header>
+        <nav>
+            <a href="#about">Giới thiệu</a>
+            <a href="#skills">Kỹ năng</a>
+            <a href="#experience">Kinh nghiệm</a>
+            <a href="#projects">Dự án</a>
+            <a href="#contact">Liên hệ</a>
+        </nav>
+        <main>
+            <section id="about" class="card">
+                <h2>👋Giới thiệu</h2>
+                <p>Tôi là Nguyễn Văn A, sinh ngày 01/01/2003, dự kiến tốt nghiệp chuyên ngành Kỹ thuật Phần mềm tại Khoa Công nghệ Thông tin, Trường Đại học Đà Lạt vào tháng 6 năm 2025.</p>
+            </section>
+            <section id="skills" class="card skills">
+                <h2>🛠️Kỹ năng</h2>
+                <span>Python: Data Analytics</span>
+                <span>React</span>
+                <span>Back-end Developer</span>
+                <span>Web Design</span>
+            </section>
+            <section id="experience" class="card">
+                <h2>💼Kinh nghiệm</h2>
+                <ul>
+                    <li><strong>Thực tập</strong> - Công ty FPT Software (02/2025 - 05/2025)</li>
+                    <li><strong>Web Developer Freelancer</strong> (08/2024 - 02/2025)</li>
+                </ul>
+            </section>
+            <section id="projects" class="card">
+                <h2>🚀Dự án nổi bật</h2>
+                <ul>
+                    <li><strong>Website thương mại điện tử</strong> - Cửa hàng ABC Store</li>
+                    <li><strong>Website học trực tuyến</strong> - Trung tâm Giáo dục Star</li>
+                    <li><strong>Nhận diện giọng nói tiếng Việt</strong> - Hệ thống tra cứu tài liệu</li>
+                </ul>
+            </section>
+            <section id="contact" class="card">
+                <h2>Liên hệ</h2>
+                <p>Email: nguyenvana@gmail.com</p>
+                <p>Điện thoại: 0901 234 567</p>
+                <p>LinkedIn: <a href="https://linkedin.com/in/nguyenvana" target="_blank">linkedin.com/in/nguyenvana</a></p>
+            </section>
+        </main>
+        <button type="button" class="btn-export" onclick="exportPDF()">Xuất PDF</button>
+        <footer>
+            &copy; 2025 Nguyễn Văn A. Mọi quyền được bảo lưu.
+        </footer>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
