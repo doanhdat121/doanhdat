@@ -1,174 +1,201 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Đỗ Anh Đạt | CV Online</title>
-    
-    <link rel="stylesheet" href="css/style.css" />
+    <title>Do Anh Dat | CV Online</title>
     <link rel="icon" type="image/png" href="img/favicon.png" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 p-4 md:p-10 font-sans text-gray-900">
 
-    <div id="pdf-content" class="max-w-5xl mx-auto bg-white p-10 md:p-16 shadow-lg">
-        
-        <header class="mb-12">
-            <h1 class="text-5xl md:text-[56px] font-black tracking-tight mb-2">Đỗ Anh Đạt</h1>
-            <p class="text-lg md:text-xl font-medium text-gray-700">Full-stack Developer</p>
-        </header>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<body class="flex justify-center content-center">
+    <!-- outer container -->
+    <div class="border border-gray-300 rounded-sm shadow-lg py-10 px-10 w-4/5 mt-10 mb-10"">
+        <!-- header (profile) -->
+        <header>
+           
+                <div class="grid justify-items-start">
+                    <h1 class="text-7xl font-extrabold">Do Anh Dat</h1>
+                    <p class="text-xl mt-5">Programmer - Lecturer</p>
+                </div>
             
-            <div class="space-y-8">
-                
-                <section>
-                    <h2 class="text-xl font-bold mb-3">Contact Details</h2>
-                    <div class="border-t border-gray-200 pt-3 space-y-3 text-sm">
-                        <div>
-                            <p class="font-bold text-gray-800">Phone</p>
-                            <p class="text-gray-600">0901 234 567</p>
-                        </div>
-                        <div>
-                            <p class="font-bold text-gray-800">E-mail</p>
-                            <p class="text-gray-600">2410277@dlu.edu.vn</p>
-                        </div>
-                        <div>
-                            <p class="font-bold text-gray-800">Location</p>
-                            <p class="text-gray-600">Lâm Đồng - Việt Nam</p>
-                        </div>
-                    </div>
-                </section>
+        </header>
+        <!-- detailed info -->
+        <main class="flex gap-x-10 mt-10">
+            <div class="w-2/6">
+                <!-- contact details -->
+                <strong class="text-xl font-medium">Contact Details</strong>
+                <ul class="mt-2 mb-10">
+                    <li class="px-2 mt-1"><strong class="mr-1">Phone </strong>
+                        <a href="tel:+821023456789" class="block">0123 456 789</a>
+                    </li>
+                    <li class="px-2 mt-1"><strong class="mr-1">E-mail </strong>
+                        <a href="mailto:" class="block">2410277@dlu.edu.vn</a>
+                    </li>
+                    <li class="px-2 mt-1"><strong class="mr-1">Location</strong><span class="block">Lâm Đồng - Việt Nam</span></li>
+                </ul>
 
-                <section>
-                    <h2 class="text-xl font-bold mb-3">Github Stats</h2>
-                    <div class="border-t border-gray-200 pt-3">
-                        <div class="flex h-6 w-full rounded overflow-hidden text-[10px] md:text-xs font-bold text-white text-center">
-                            <div class="bg-[#d53a7a] w-1/3 flex items-center justify-center tracking-wider">HTML</div>
-                            <div class="bg-[#2d68f0] w-1/3 flex items-center justify-center tracking-wider">CSS</div>
-                            <div class="bg-[#e89d38] w-1/3 flex items-center justify-center tracking-wider">JS</div>
-                        </div>
-                    </div>
-                </section>
+                <!-- github stats -->
+                <strong class="text-xl font-medium ">Github Stats</strong>
+                <ul class="flex w-full mt-2 mb-10">
+                    <li class="px-2 mt-2 w-4/12 bg-pink-600 text-white text-center rounded-tl-lg rounded-bl-lg">HTML
+                    </li>
+                    <li class="px-2 mt-2 w-4/12 bg-blue-600 text-white text-center">CSS</li>
+                    <li class="px-2 mt-2 w-5/12 bg-yellow-500 text-white text-center rounded-tr-lg rounded-br-lg">JS
+                    </li>
 
+                </ul>
+                <!-- skills -->
+                <strong class="text-xl font-medium">Skills</strong>
+                <ul class="mt-2 mb-10">
+                    <li class="px-2 mt-1">HTML</li>
+                    <li class="px-2 mt-1">CSS</li>
+                    <li class="px-2 mt-1">JavaScript</li>
+                    <li class="px-2 mt-1">React</li>
+                    <li class="px-2 mt-1">Node.js</li>
+                </ul>
+                <strong class="text-xl font-medium">Further Education</strong>
+                <ul class="mt-2 mb-10">
+                    <li class="px-2 mt-1">DLU</li>
+                    <li class="px-2 mt-1">Udemy</li>
+                    <li class="px-2 mt-1">Freecodecamp</li>
+                </ul>
+                </ul>
+                <!-- what I'm learning these days -->
+                <strong class="text-xl font-medium">Currently learning</strong>
+                <ul class="mt-2 mb-10">
+                    <li class="px-2 mt-1">About Web Accessibility</li>
+                    <li class="px-2 mt-1">and User Experience</li>
+                </ul>
+                <strong class="text-xl font-medium">Interests & Hobbies</strong>
+                <ul class="mt-2">
+                    <li class="px-2 mt-1">Gaming</li>
+                    <li class="px-2 mt-1">New technologies</li>
+                    <li class="px-2 mt-1">Listen to music</li>
+                    <li class="px-2 mt-1">Factorio</li>
+                    <li class="px-2 mt-1">Sleep</li>
+                </ul>
+            </div>
+            <!-- info -->
+            <div class="w-4/6">
                 <section>
-                    <h2 class="text-xl font-bold mb-3">Skills</h2>
-                    <div class="border-t border-gray-200 pt-3">
-                        <ul class="space-y-1.5 text-gray-700 text-sm">
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                            <li>Graphic design</li>
-                            <li>C++</li>
-                            <li>C#</li>
-                            <li>Python</li>
-                            <li>MOS 1000</li>
-                        </ul>
-                    </div>
-                </section>
+                    <!-- about me -->
+                    <h2 class="text-2xl pb-1 border-b font-semibold">About</h2>
+                    <p class="mt-4 text-xs">Tôi là Do Anh Dat, sinh ngày 12/01/2006, dự kiến tốt nghiệp chuyên ngành Sư phạm Tin Học, Trường Đại học Đà Lạt vào tháng 6 năm 2028. </p>
 
+                </section> 
                 <section>
-                    <h2 class="text-xl font-bold mb-3">Further Education</h2>
-                    <div class="border-t border-gray-200 pt-3">
-                        <ul class="space-y-1.5 text-gray-700 text-sm">
-                            <li>Da Lat University</li>
-                        </ul>
-                    </div>
+                    <!-- projects -->
+				<h2 class="text-2xl mt-6 pb-1 border-b font-semibold">Projects</h2>
+				<ul class="mt-1">
+					<li class="py-2">
+						<div class="flex justify-between my-1">
+							<strong>Ứng dụng Quản lý Công việc</strong>
+							<p class="flex">
+								<span class="bg-gray-600 text-white px-2 py-1 ml-1 text-xs rounded">React</span>
+								<span class="bg-gray-600 text-white px-2 py-1 ml-1 text-xs rounded">Node.js</span>
+								<span class="bg-gray-600 text-white px-2 py-1 ml-1 text-xs rounded">MongoDB</span>
+							</p>
+						</div>
+						<ul class="flex mb-2">
+							<li><a href="#" class="bg-blue-600 text-white px-2 py-1 mr-1 text-sm rounded">Live</a></li>
+							<li><a href="#" class="bg-blue-600 text-white px-2 py-1 mr-1 text-sm rounded">Code</a></li>
+						</ul>
+						<p class="text-xs">
+							Xây dựng ứng dụng quản lý công việc cá nhân với tính năng tạo, chỉnh sửa và đánh dấu hoàn thành. 
+							Hệ thống hỗ trợ phân loại công việc theo mức độ ưu tiên, đồng bộ dữ liệu trên nhiều thiết bị và 
+							gửi thông báo nhắc nhở qua email. Giao diện hiện đại, dễ sử dụng, tối ưu cho cả desktop và mobile.
+						</p>
+					</li>
+					<li class="py-2">
+						<div class="flex justify-between my-1">
+							<strong>Blog Chia sẻ Kiến thức Lập trình</strong>
+							<p class="flex">
+								<span class="bg-gray-600 text-white px-2 py-1 ml-1 text-xs rounded">Next.js</span>
+								<span class="bg-gray-600 text-white px-2 py-1 ml-1 text-xs rounded">TailwindCSS</span>
+								<span class="bg-gray-600 text-white px-2 py-1 ml-1 text-xs rounded">Markdown</span>
+							</p>
+						</div>
+						<ul class="flex mb-2">
+							<li><a href="#" class="bg-blue-600 text-white px-2 py-1 mr-1 text-sm rounded">Live</a></li>
+							<li><a href="#" class="bg-blue-600 text-white px-2 py-1 mr-1 text-sm rounded">Code</a></li>
+						</ul>
+						<p class="text-xs">
+							Phát triển blog cá nhân để chia sẻ kiến thức về lập trình web và công nghệ mới. 
+							Hỗ trợ viết bài bằng Markdown, tích hợp hệ thống bình luận và chức năng tìm kiếm nội dung. 
+							Website được tối ưu SEO, tốc độ tải nhanh và có khả năng triển khai dễ dàng trên nền tảng Vercel.
+						</p>
+					</li>
+					<li class="py-2">
+						<div class="flex justify-between my-1">
+							<strong>Ứng dụng Quản lý Chi tiêu</strong>
+							<p class="flex">
+								<span class="bg-gray-600 text-white px-2 py-1 ml-1 text-xs rounded">Flutter</span>
+								<span class="bg-gray-600 text-white px-2 py-1 ml-1 text-xs rounded">Firebase</span>
+							</p>
+						</div>
+						<ul class="flex mb-2">
+							<li><a href="#" class="bg-blue-600 text-white px-2 py-1 mr-1 text-sm rounded">Live</a></li>
+							<li><a href="#" class="bg-blue-600 text-white px-2 py-1 mr-1 text-sm rounded">Code</a></li>
+						</ul>
+						<p class="text-xs">
+							Ứng dụng mobile giúp người dùng theo dõi chi tiêu hàng ngày, phân loại theo danh mục 
+							(ăn uống, đi lại, giải trí). Dữ liệu được lưu trữ trên Firebase và đồng bộ theo thời gian thực. 
+							Hệ thống báo cáo trực quan bằng biểu đồ, hỗ trợ xuất file CSV để phân tích chi tiết.
+						</p>
+					</li>
+				</ul>		
+                <section>
+                    <!-- work experiences -->
+                    <h2 class="text-2xl mt-6 pb-1 border-b font-semibold">Work Experiences</h2>
+                   <ul class="mt-2">
+					<li class="pt-2">
+						<p class="flex justify-between text-sm">
+							<strong class="text-base">VNPT Technology</strong>01/2024 - 12/2024
+						</p>
+						<p class="flex justify-between text-base">
+							Thực tập sinh Front-end Developer<small>Hà Nội, Việt Nam</small>
+						</p>
+						<p class="text-justify text-xs">
+							Tham gia xây dựng giao diện người dùng cho các ứng dụng quản lý thiết bị IoT. 
+							Sử dụng ReactJS và TailwindCSS để tối ưu trải nghiệm người dùng. 
+							Học hỏi quy trình kiểm thử phần mềm và phối hợp với đội QA để đảm bảo chất lượng sản phẩm.
+						</p>
+					</li>
+					<li class="pt-2">
+						<p class="flex justify-between text-sm">
+							<strong class="text-base">Startup E-commerce</strong>2023 - 2024
+						</p>
+						<p class="flex justify-between text-base">
+							Lập trình viên Backend<small>TP. Hồ Chí Minh, Việt Nam</small>
+						</p>
+						<p class="text-justify text-xs">
+							Phát triển hệ thống quản lý đơn hàng và thanh toán trực tuyến bằng Node.js và MongoDB. 
+							Tích hợp cổng thanh toán và triển khai API phục vụ cho ứng dụng di động. 
+							Đảm bảo tính bảo mật dữ liệu và tối ưu hiệu suất xử lý giao dịch.
+						</p>
+					</li>
+				</ul>
+                </section>
+                <section>
+                    <!-- education -->
+                    <h2 class="text-2xl mt-6 pb-1 border-b font-semibold">Education</h2>
+                    <ul class="mt-2">
+                        <li class="pt-2">
+                            <p class="flex justify-between text-sm"><strong class="text-base">Đại học Đà Lạt</strong>2024 - 2028</p>
+                            <p class="flex justify-between text-sm">Sư Phạm Tin Học<small>GPA 3.4/4.0</small></p>
+                        </li>
+                        <li class="pt-2">
+                            <p class="flex justify-between text-sm"><strong class="text-base">FreeCodeCamp / Udemy</strong>2028 - 2029</p>
+                            <p class="flex justify-between text-sm">Chứng chỉ Web Responsive & JavaScript Algorithms<small>Hoàn thành</small></p>
+                        </li>
+                    </ul>
                 </section>
             </div>
-
-            <div class="md:col-span-2 space-y-8">
-                
-                <section>
-                    <h2 class="text-xl font-bold mb-3">About</h2>
-                    <div class="border-t border-gray-200 pt-3">
-                        <p class="text-sm text-gray-700 leading-relaxed text-justify">
-                            Tôi là Đỗ Anh Đạt, sinh ngày 12/01/2006, dự kiến tốt nghiệp ngành Sư phạm Tin học tại Khoa Sư phạm, Trường Đại học Đà Lạt vào tháng 6 năm 2028.
-                        </p>
-                    </div>
-                </section>
-
-                <section>
-                    <h2 class="text-xl font-bold mb-3">Experience</h2>
-                    <div class="border-t border-gray-200 pt-3 text-sm text-gray-700 space-y-2">
-                        <p><strong>Thực tập</strong> - Công ty FPT Software (02/2025 - 05/2025)</p>
-                        <p><strong>Web Developer Freelancer</strong> (08/2024 - 02/2025)</p>
-                    </div>
-                </section>
-
-                <section>
-                    <h2 class="text-xl font-bold mb-3">Projects</h2>
-                    <div class="border-t border-gray-200 pt-4 space-y-8">
-                        
-                        <div>
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-bold text-[17px]">Website thương mại điện tử</h3>
-                                <div class="flex gap-1">
-                                    <span class="bg-[#4b5563] text-white text-[10px] px-2 py-0.5 rounded">HTML</span>
-                                    <span class="bg-[#4b5563] text-white text-[10px] px-2 py-0.5 rounded">CSS</span>
-                                    <span class="bg-[#4b5563] text-white text-[10px] px-2 py-0.5 rounded">React</span>
-                                </div>
-                            </div>
-                            <div class="flex gap-2 mb-2">
-                                <button class="bg-[#4169e1] text-white text-xs px-3 py-1 rounded shadow-sm hover:bg-blue-700">Live</button>
-                                <button class="bg-[#4169e1] text-white text-xs px-3 py-1 rounded shadow-sm hover:bg-blue-700">Code</button>
-                            </div>
-                            <p class="text-[13px] text-gray-600 leading-relaxed text-justify">
-                                Dự án nổi bật: Cửa hàng ABC Store. Phát triển nền tảng thương mại điện tử đầy đủ tính năng bao gồm giỏ hàng, thanh toán trực tuyến và quản lý đơn hàng. Giao diện được tối ưu hóa SEO và có khả năng hiển thị tương thích.
-                            </p>
-                        </div>
-                        
-                        <div>
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-bold text-[17px]">Website học trực tuyến</h3>
-                                <div class="flex gap-1">
-                                    <span class="bg-[#4b5563] text-white text-[10px] px-2 py-0.5 rounded">HTML</span>
-                                    <span class="bg-[#4b5563] text-white text-[10px] px-2 py-0.5 rounded">CSS</span>
-                                    <span class="bg-[#4b5563] text-white text-[10px] px-2 py-0.5 rounded">JS</span>
-                                </div>
-                            </div>
-                            <div class="flex gap-2 mb-2">
-                                <button class="bg-[#4169e1] text-white text-xs px-3 py-1 rounded shadow-sm hover:bg-blue-700">Live</button>
-                                <button class="bg-[#4169e1] text-white text-xs px-3 py-1 rounded shadow-sm hover:bg-blue-700">Code</button>
-                            </div>
-                            <p class="text-[13px] text-gray-600 leading-relaxed text-justify">
-                                Trung tâm Giáo dục Star. Xây dựng một ứng dụng web cho phép quản lý danh mục khóa học, theo dõi quá trình học tập của sinh viên. Hệ thống tích hợp tính năng tìm kiếm thông minh và lọc khóa học.
-                            </p>
-                        </div>
-
-                        <div>
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-bold text-[17px]">Nhận diện giọng nói tiếng Việt</h3>
-                                <div class="flex gap-1">
-                                    <span class="bg-[#4b5563] text-white text-[10px] px-2 py-0.5 rounded">HTML</span>
-                                    <span class="bg-[#4b5563] text-white text-[10px] px-2 py-0.5 rounded">CSS</span>
-                                    <span class="bg-[#4b5563] text-white text-[10px] px-2 py-0.5 rounded">Node.js</span>
-                                </div>
-                            </div>
-                            <div class="flex gap-2 mb-2">
-                                <button class="bg-[#4169e1] text-white text-xs px-3 py-1 rounded shadow-sm hover:bg-blue-700">Live</button>
-                                <button class="bg-[#4169e1] text-white text-xs px-3 py-1 rounded shadow-sm hover:bg-blue-700">Code</button>
-                            </div>
-                            <p class="text-[13px] text-gray-600 leading-relaxed text-justify">
-                                Hệ thống tra cứu tài liệu. Ứng dụng tích hợp API để cung cấp khả năng tìm kiếm tài liệu bằng giọng nói cho người dùng. Giao diện thay đổi linh hoạt dựa trên trạng thái thu âm.
-                            </p>
-                        </div>
-
-                    </div>
-                </section>
-
-            </div>
-        </div>
+        </main>
     </div>
-
-    <div class="max-w-5xl mx-auto mt-6 flex justify-end">
-        <button type="button" class="btn-export bg-black hover:bg-gray-800 text-white font-bold py-2 px-6 rounded shadow transition duration-300" onclick="exportPDF()">
-            Xuất PDF
-        </button>
-    </div>
-
-    <script src="js/script.js"></script>
 </body>
 </html>
